@@ -4,11 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/bg_button.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/border.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first_background.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/font/font.xml" value="0.39076923076923076" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/font/poppins.xml" value="0.39076923076923076" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout-v28/fragment_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/activity_main.xml" value="0.2875905797101449" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/mipmap-anydpi-v26/ic_first.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/mipmap-anydpi-v26/ic_first_round.xml" value="0.22135416666666666" />

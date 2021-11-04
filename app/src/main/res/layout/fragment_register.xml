@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/welcome_to_pc_workshop"
+        android:text="@string/let_s_get_started"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,19 +37,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/sign_in_to_continue"
+        android:text="@string/create_an_new_account"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGetStarted"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvGetStarted" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameLayout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount"
@@ -66,24 +63,22 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/letter"
+            android:src="@drawable/person"
             android:layout_marginTop="-30dp"
             android:layout_marginStart="8dp"/>
-
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etName"
             android:layout_width="340dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:hint="@string/enter_login"
+            android:hint="@string/full_name"
             android:inputType="text"
             android:paddingStart="38dp"
             android:background="@drawable/border">
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
@@ -107,13 +102,49 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:src="@drawable/email"
+            android:layout_marginTop="-30dp"
+            android:layout_marginStart="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:hint="@string/your_email"
+            android:inputType="text"
+            android:paddingStart="38dp"
+            android:background="@drawable/border">
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailLayout"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:layout_gravity="center"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/locker"
             android:layout_marginTop="-30dp"
             android:layout_marginStart="8dp"/>
 
-
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etPassword"
             android:layout_width="340dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -125,54 +156,55 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordConfirmLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:layout_gravity="center"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/locker"
+            android:layout_marginTop="-30dp"
+            android:layout_marginStart="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPasswordConfirm"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:hint="@string/password_again"
+            android:inputType="text"
+            android:paddingStart="38dp"
+            android:background="@drawable/border">
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSingIn"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/bg_button"
         android:text="@string/sign_in"
         android:textSize="16sp"
         android:fontFamily="@font/poppins_light"
-        app:layout_constraintEnd_toEndOf="@+id/emailLayout"
-        app:layout_constraintStart_toStartOf="@+id/emailLayout"
-        app:layout_constraintTop_toBottomOf="@+id/emailLayout" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="OR"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnSingIn"
-        app:layout_constraintStart_toStartOf="@+id/btnSingIn"
-        app:layout_constraintTop_toBottomOf="@+id/btnSingIn" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/google"
-        app:layout_constraintBottom_toBottomOf="@+id/appCompatButton"
-        app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
-        app:layout_constraintTop_toTopOf="@+id/appCompatButton"
-        android:layout_marginEnd="12dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/login_with_google"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSingIn"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintEnd_toEndOf="@+id/passwordConfirmLayout"
+        app:layout_constraintStart_toStartOf="@+id/passwordConfirmLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordConfirmLayout" />
 
     <TextView
         android:id="@+id/tvHave"
@@ -180,22 +212,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/don_t_have_a_account"
+        android:text="@string/have_a_account"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/appCompatButton"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+        app:layout_constraintEnd_toEndOf="@+id/tvSignUp"
+        app:layout_constraintStart_toStartOf="@+id/btnSingIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingIn" />
 
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/register"
-        android:textSize="16sp"
-        android:textFontWeight="1000"
+        android:text="@string/sign_up"
         android:textColor="#40BFFF"
+        android:textFontWeight="1000"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvHave"
-        app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-        app:layout_constraintStart_toEndOf="@+id/tvHave" />
+        app:layout_constraintStart_toEndOf="@+id/tvHave"
+        android:layout_marginLeft="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

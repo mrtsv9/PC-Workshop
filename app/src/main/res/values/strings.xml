@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">PC Workshop</string>
+    <string name="sign_in">Sign in</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_login">Enter login</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="welcome_to_pc_workshop">Welcome to PC Workshop!</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="register">Register</string>
+    <string name="don_t_have_a_account">Don’t have a account?</string>
+    <string name="let_s_get_started">Let’s Get Started</string>
+    <string name="create_an_new_account">Create an new account</string>
+    <string name="full_name">Full name</string>
+    <string name="your_email">Your Email</string>
+    <string name="password_again">Password again</string>
+    <string name="have_a_account">Have a account?</string>
+    <string name="sign_up">Sign up</string>
 </resources>
