@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.pcworkshop.databinding.ActivityMainBinding
+import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentLoginBinding
 
 class LoginFragment: Fragment() {
@@ -24,6 +24,11 @@ class LoginFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val btn = binding!!.btnSingIn
+        btn.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
+        }
     }
 
     override fun onDestroy() {

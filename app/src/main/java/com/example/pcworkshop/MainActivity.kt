@@ -3,17 +3,18 @@ package com.example.pcworkshop
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import com.example.pcworkshop.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private var binding: ActivityMainBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
-//        val navHostFragment  = supportFragmentManager.findFragmentById(R.id.mainFragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-//        val action = SpecifyAmountFragmentDirections.
-//        navController.navigate()
     }
 
 }
