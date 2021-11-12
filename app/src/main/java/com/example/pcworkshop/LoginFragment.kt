@@ -10,7 +10,6 @@ import com.example.pcworkshop.databinding.FragmentLoginBinding
 
 class LoginFragment: Fragment() {
 
-//    private var _binding: ActivityMainBinding? = null
     private var binding: FragmentLoginBinding? = null
 
     override fun onCreateView(

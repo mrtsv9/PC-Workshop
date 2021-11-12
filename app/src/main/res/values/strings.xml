@@ -15,4 +15,6 @@
     <string name="password_again">Password again</string>
     <string name="have_a_account">Have a account?</string>
     <string name="sign_up">Sign up</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
 </resources>

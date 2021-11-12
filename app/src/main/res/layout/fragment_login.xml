@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
         android:text="@string/welcome_to_pc_workshop"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_light"
         android:text="@string/sign_in_to_continue"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGetStarted"
@@ -69,7 +69,6 @@
             android:src="@drawable/letter"
             android:layout_marginTop="-36dp"
             android:layout_marginStart="8dp"/>
-
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etName"
@@ -132,7 +131,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_button"
         android:text="@string/sign_in"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:fontFamily="@font/poppins_light"
         app:layout_constraintEnd_toEndOf="@+id/emailLayout"
         app:layout_constraintStart_toStartOf="@+id/emailLayout"
@@ -146,7 +145,7 @@
         android:fontFamily="@font/poppins_light"
         android:text="OR"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnSingIn"
         app:layout_constraintStart_toStartOf="@+id/btnSingIn"
         app:layout_constraintTop_toBottomOf="@+id/btnSingIn" />
@@ -167,7 +166,7 @@
         android:background="@android:color/transparent"
         android:fontFamily="@font/poppins_light"
         android:text="@string/login_with_google"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
