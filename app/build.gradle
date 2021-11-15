@@ -37,13 +37,12 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation files('libs\\mysql-connector-java-8.0.27.jar')
-    implementation files('libs\\jtds-1.3.1.jar')
+    implementation files('libs/mysql-connector-java-8.0.27.jar')
+    implementation files('libs/jtds-1.3.1.jar')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -62,4 +61,11 @@ dependencies {
 
     // BottomNavView
     implementation "com.google.android.material:material:1.4.0"
+
+    // Retrofit and other
+    implementation "com.squareup.retrofit2:retrofit:2.9.0" //Retrofit для REST API
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1' //Для ретрофита, чтобы преобразовывать Json -> Объект
+    implementation "com.google.code.gson:gson:2.8.7" //чтобы преобразовывать Json -> Объект
+    implementation "com.squareup.okhttp3:logging-interceptor:3.14.1" //для логов в ретрофите
+
 }

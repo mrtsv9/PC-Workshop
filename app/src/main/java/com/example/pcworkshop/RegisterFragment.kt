@@ -1,27 +1,21 @@
 package com.example.pcworkshop
 
-import android.os.AsyncTask
+
 import android.os.Bundle
-import android.os.StrictMode
-import android.os.StrictMode.ThreadPolicy
-import android.se.omapi.Session
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
-import com.mysql.cj.xdevapi.DatabaseObject
-import com.mysql.cj.xdevapi.SessionImpl
-import kotlinx.coroutines.launch
-import java.sql.Connection
-import java.sql.DatabaseMetaData
-import java.sql.DriverManager
-import java.sql.DriverManager.getConnection
-import java.sql.SQLException
-import java.util.*
+import com.example.pcworkshop.models.Client
+import com.example.pcworkshop.services.MyAPI
+import com.example.pcworkshop.services.ServiceBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class RegisterFragment: Fragment() {
 
@@ -43,9 +37,32 @@ class RegisterFragment: Fragment() {
         btn.setOnClickListener {
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment3())
         }
+
     }
 
-    //Some changes
+    override fun onResume() {
+        super.onResume()
+        test()
+    }
+
+    private fun test() {
+        val service = ServiceBuilder.buildService(MyAPI::class.java)
+
+        val requestCall: Call<List<Client>> =  service.getAllClients()
+
+        requestCall.enqueue(object: Callback<List<Client>> {
+            override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
+                if (response.isSuccessful) {
+                    Log.e("KEK", "msg")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Client>>, t: Throwable) {
+
+            }
+        })
+
+    }
 
     override fun onDestroy() {
         super.onDestroy()

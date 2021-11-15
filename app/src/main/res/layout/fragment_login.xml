@@ -41,8 +41,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGetStarted"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvGetStarted" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameLayout"
@@ -151,6 +150,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSingIn" />
 
     <ImageView
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/google"
@@ -160,6 +160,7 @@
         android:layout_marginEnd="12dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:visibility="gone"
         android:id="@+id/appCompatButton"
         android:layout_width="260dp"
         android:layout_height="50dp"
@@ -181,7 +182,8 @@
         android:fontFamily="@font/poppins_light"
         android:text="@string/don_t_have_a_account"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/appCompatButton"
+        app:layout_constraintEnd_toEndOf="@+id/btnSingIn"
+        app:layout_constraintStart_toStartOf="@+id/btnSingIn"
         app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
 
     <TextView
