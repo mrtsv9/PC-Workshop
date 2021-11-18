@@ -93,15 +93,7 @@ class RegisterFragment: Fragment() {
 //                Log.e("KEK", "msg")
 //            }
 //        })
-        client.newCall(request).enqueue(object : Callback{
-            override fun onFailure(call: Call, e: IOException) {
-                Log.e("KEK", call.toString())
-            }
 
-            override fun onResponse(call: Call, response: Response) {
-                Log.e("KEK", "msg")
-            }
-        })
     }
 
     override fun onDestroy() {
