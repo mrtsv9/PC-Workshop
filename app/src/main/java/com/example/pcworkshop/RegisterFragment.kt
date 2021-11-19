@@ -2,7 +2,6 @@ package com.example.pcworkshop
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import com.example.pcworkshop.databinding.FragmentRegisterBinding
 import com.example.pcworkshop.models.Client
 import com.example.pcworkshop.services.MyAPI
 import com.example.pcworkshop.services.ServiceBuilder
+import com.example.pcworkshop.services.Test
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -46,63 +46,9 @@ class RegisterFragment: Fragment() {
 
     override fun onResume() {
         super.onResume()
-        test()
+        Test.start()
     }
 
-//    private fun test() {
-//        val service = ServiceBuilder.buildService(MyAPI::class.java)
-//
-//        val requestCall: Call<List<Client>> =  service.getAllClients()
-//
-//        requestCall.enqueue(object: Callback<List<Client>> {
-//            override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
-//                if (response.isSuccessful) {
-//                    Log.e("KEK", "msg")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<List<Client>>, t: Throwable) {
-//
-//            }
-//        })
-//
-//    }
-
-    private fun test() {
-        val client = OkHttpClient()
-        val credential = Credentials.basic("root", "root")
-        val request = Request.Builder()
-            .url("http://10.0.2.2:3000/")
-            .addHeader("Authorization", credential)
-            .build()
-
-//        client.newCall(request).enqueue(object : Callback<List<Client>>, okhttp3.Callback {
-//            override fun onFailure(call: Call<List<Client>>, t: Throwable) {
-//                Log.e("KEK", call.toString())
-//            }
-//
-//            override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
-//                Log.e("KEK", "msg")
-//            }
-//
-//            override fun onFailure(call: okhttp3.Call, e: IOException) {
-//                Log.e("KEK", call.toString())
-//            }
-//
-//            override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
-//                Log.e("KEK", "msg")
-//            }
-//        })
-        client.newCall(request).enqueue(object : Callback{
-            override fun onFailure(call: Call, e: IOException) {
-                Log.e("KEK", call.toString())
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                Log.e("KEK", "msg")
-            }
-        })
-    }
 
     override fun onDestroy() {
         super.onDestroy()

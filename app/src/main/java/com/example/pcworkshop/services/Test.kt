@@ -23,7 +23,7 @@ object Test : Callback<List<Client>> {
 
         val retrofit = Retrofit.Builder()
             .baseUrl(URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
 
         val myApi = retrofit.create(MyAPI::class.java)
@@ -42,12 +42,11 @@ object Test : Callback<List<Client>> {
                     val lastName = clients[i].lastName
                     val email = clients[i].email
                     val phoneNumber = clients[i].phoneNumber
-                    clientsList?.add(Client(clientId, firstName, lastName, email, phoneNumber))
-                    Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
+                    clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
+//                    Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
                 }
             }
             Log.e("KEK", clientsList.toString())
-//            Log.e("KEK", response.body().toString())
 
         }
         else {
