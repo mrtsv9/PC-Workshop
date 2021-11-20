@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Test : Callback<List<Client>> {
 
     private const val URL = "http://10.0.2.2:3000/"
-    var clientsList:  MutableList<Client> = emptyList<Client>().toMutableList()
+    private var clientsList: MutableList<Client> = emptyList<Client>().toMutableList()
 
     fun start() {
         val gson: Gson = GsonBuilder()

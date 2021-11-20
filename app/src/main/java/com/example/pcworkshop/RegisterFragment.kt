@@ -20,7 +20,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
 
-
 class RegisterFragment: Fragment() {
 
     private var binding: FragmentRegisterBinding? = null
