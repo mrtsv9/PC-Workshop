@@ -27,6 +27,8 @@ class LoginFragment: Fragment() {
         val btn = binding!!.btnSingIn
         btn.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
+
+
         }
     }
 

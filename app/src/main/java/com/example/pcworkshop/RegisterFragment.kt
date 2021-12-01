@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
 import com.example.pcworkshop.services.Test
+import com.example.pcworkshop.clients.Client
+import com.example.pcworkshop.services.TestPost
 
 class RegisterFragment: Fragment() {
 
@@ -29,6 +31,14 @@ class RegisterFragment: Fragment() {
         val btn = binding!!.btnSingIn
         btn.setOnClickListener {
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment3())
+
+            val first_name = binding?.etName?.text.toString()
+            val lastName = binding?.etLastName?.text.toString()
+            val email = binding?.etEmail?.text.toString()
+            val phoneNumber = binding?.etPhoneNumber?.text.toString()
+            val client = Client(0, first_name, lastName, email, phoneNumber)
+            val post = TestPost(client)
+            post.start()
         }
 
     }
