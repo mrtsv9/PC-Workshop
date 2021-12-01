@@ -46,7 +46,7 @@ object Test : Callback<List<Client>> {
 //                    Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
                 }
             }
-            Log.e("KEK", clientsList.toString())
+//            Log.e("KEK", clientsList.toString())
 
         }
         else {
