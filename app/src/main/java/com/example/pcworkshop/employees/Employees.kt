@@ -1,5 +1,7 @@
 package com.example.pcworkshop.employees
 
+import com.example.pcworkshop.positions.Position
+
 data class Employees(
     var employeeId: Int = 0,
     var firstName: String = "",
@@ -9,11 +11,5 @@ data class Employees(
     var phone_number: String = "",
     var email: String = "",
     var positionId: Int = 0,
-    var position: Positions = Positions()
-)
-
-
-data class Positions(
-    var positionId: Int = 0,
-    var name: String = ""
+    val position: Position
 )

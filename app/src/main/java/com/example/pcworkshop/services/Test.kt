@@ -29,6 +29,7 @@ object Test : Callback<List<Client>> {
 
         val call = myApi.getAllClients()
         call.enqueue(this)
+
     }
 
     override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
@@ -41,8 +42,8 @@ object Test : Callback<List<Client>> {
                     val lastName = clients[i].lastName
                     val email = clients[i].email
                     val phoneNumber = clients[i].phoneNumber
-                    clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
-//                    Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
+//                    clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
+                    Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
                 }
             }
 //            Log.e("KEK", clientsList.toString())

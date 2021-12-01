@@ -5,10 +5,5 @@ data class Accessories(
     var name: String = "",
     var properties: String = "",
     var typeOfAccessoriesId: Int = 0,
-    var typeOfAccessories: TypeOfAccessories = TypeOfAccessories()
-)
-
-data class TypeOfAccessories(
-    var typeOfAccessoriesId: Int = 0,
-    var type: String = ""
+    val typeOfAccessories: TypeOfAccessories,
 )
