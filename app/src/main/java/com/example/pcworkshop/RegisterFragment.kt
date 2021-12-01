@@ -8,17 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
-import com.example.pcworkshop.models.Client
-import com.example.pcworkshop.services.MyAPI
-import com.example.pcworkshop.services.ServiceBuilder
 import com.example.pcworkshop.services.Test
-import okhttp3.Credentials
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.IOException
 
 class RegisterFragment: Fragment() {
 

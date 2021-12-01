@@ -1,4 +1,4 @@
-package com.example.pcworkshop.models
+package com.example.pcworkshop.clients
 
 data class Client(
     var clientId: Int = 0,
