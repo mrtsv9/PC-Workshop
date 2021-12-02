@@ -32,11 +32,11 @@ class RegisterFragment: Fragment() {
         btn.setOnClickListener {
             findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment3())
 
-            val first_name = binding?.etName?.text.toString()
+            val firstName = binding?.etName?.text.toString()
             val lastName = binding?.etLastName?.text.toString()
             val email = binding?.etEmail?.text.toString()
             val phoneNumber = binding?.etPhoneNumber?.text.toString()
-            val client = Client(0, first_name, lastName, email, phoneNumber)
+            val client = Client(0, firstName, lastName, email, phoneNumber)
             val post = TestPost(client)
             post.start()
         }
@@ -47,7 +47,6 @@ class RegisterFragment: Fragment() {
         super.onResume()
         Test.start()
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
