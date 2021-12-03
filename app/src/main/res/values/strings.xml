@@ -18,4 +18,10 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="phone_number">Phone number</string>
+    <string name="control_panel">Панель управления</string>
+    <string name="clients">Клиенты</string>
+    <string name="orders">Заказы</string>
+    <string name="pc">Компьютеры</string>
+    <string name="employees">Работники</string>
+    <string name="management">Управление</string>
 </resources>

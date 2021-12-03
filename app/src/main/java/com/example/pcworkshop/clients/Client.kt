@@ -11,5 +11,6 @@ data class Client(
     var lastName: String = "",
     var email: String = "",
     @SerializedName("phone_number")
-    var phoneNumber: String? = null
+    var phoneNumber: String? = null,
+    var password: String? = null
 )

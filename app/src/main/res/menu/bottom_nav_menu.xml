@@ -3,20 +3,27 @@
 
     <item
         android:id="@+id/first"
-        android:title="First"
-        android:icon="@drawable/ic_first"/>
+        android:title="@string/management"
+        android:icon="@drawable/ic_admin_panel"/>
     <item
         android:id="@+id/second"
-        android:title="Second"
-        android:icon="@drawable/ic_second"/>
+        android:title="@string/clients"
+        android:icon="@drawable/ic_clients"/>
     <item
         android:id="@+id/third"
-        android:title="Third"
-        android:icon="@drawable/ic_third"/>
+        android:title="@string/orders"
+        android:icon="@drawable/ic_orders"/>
 
     <item
         android:id="@+id/fourth"
-        android:title="Fourth"
-        android:icon="@drawable/ic_fourth"/>
+        android:title="@string/pc"
+        android:icon="@drawable/ic_pc"/>
+
+    <item
+        android:id="@+id/аыв"
+        android:title="@string/employees"
+        android:icon="@drawable/ic_employees"/>
+
+
 
 </menu>

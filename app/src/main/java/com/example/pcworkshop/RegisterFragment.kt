@@ -36,7 +36,8 @@ class RegisterFragment: Fragment() {
             val lastName = binding?.etLastName?.text.toString()
             val email = binding?.etEmail?.text.toString()
             val phoneNumber = binding?.etPhoneNumber?.text.toString()
-            val client = Client(0, firstName, lastName, email, phoneNumber)
+            val password = binding?.etPassword?.text.toString()
+            val client = Client(0, firstName, lastName, email, phoneNumber, password)
             val post = TestPost(client)
             post.start()
         }
