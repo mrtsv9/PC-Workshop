@@ -1,4 +1,4 @@
-package com.example.pcworkshop.accessories
+package com.example.pcworkshop.models.accessories
 
 data class Accessories(
     var accessoriesId: Int = 0,

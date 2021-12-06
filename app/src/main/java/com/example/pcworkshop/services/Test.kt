@@ -1,7 +1,7 @@
 package com.example.pcworkshop.services
 
 import android.util.Log
-import com.example.pcworkshop.clients.Client
+import com.example.pcworkshop.models.clients.Client
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -28,6 +28,7 @@ object Test{
         val myApi = retrofit.create(MyAPI::class.java)
 
         val call = myApi.getAllClients()
+
         call.enqueue(object: Callback<List<Client>> {
             override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
                 if(response.isSuccessful) {
@@ -39,10 +40,8 @@ object Test{
                             val lastName = clients[i].lastName
                             val email = clients[i].email
                             val phoneNumber = clients[i].phoneNumber
-//                    clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
-                            Log.e(
-                                "KEK",
-                                Client(clientId, firstName, lastName, email, phoneNumber).toString()
+                            clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
+                            Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString()
                             )
                         }
                     }
@@ -50,7 +49,7 @@ object Test{
             }
 
             override fun onFailure(call: Call<List<Client>>, t: Throwable) {
-                Log.e("KEK", t.toString())
+//                Log.e("KEK", t.toString())
             }
         })
 

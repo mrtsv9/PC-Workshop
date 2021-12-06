@@ -25,4 +25,6 @@
     <string name="employees">Работники</string>
     <string name="management">Управление</string>
     <string name="accessories">Комплектующие</string>
+    <string name="positions">Должности</string>
+    <string name="types_of_accessories">Типы комлпектующих</string>
 </resources>

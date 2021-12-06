@@ -1,6 +1,6 @@
-package com.example.pcworkshop.employees
+package com.example.pcworkshop.models.employees
 
-import com.example.pcworkshop.positions.Position
+import com.example.pcworkshop.models.positions.Position
 
 data class Employees(
     var employeeId: Int = 0,

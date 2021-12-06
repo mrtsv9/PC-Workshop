@@ -1,4 +1,4 @@
-package com.example.pcworkshop.orders
+package com.example.pcworkshop.models.orders
 
 data class PaymentMethods(
     var paymentMethodId: Int = 0,

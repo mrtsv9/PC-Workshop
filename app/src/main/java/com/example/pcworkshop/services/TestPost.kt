@@ -1,7 +1,7 @@
 package com.example.pcworkshop.services
 
 import android.util.Log
-import com.example.pcworkshop.clients.Client
+import com.example.pcworkshop.models.clients.Client
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import retrofit2.Call
