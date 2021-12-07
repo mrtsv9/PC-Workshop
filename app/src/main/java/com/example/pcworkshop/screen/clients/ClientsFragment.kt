@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentClientsBinding
 import com.example.pcworkshop.screen.adapters.ClientsAdapter
 import com.example.pcworkshop.services.Test
+import com.example.pcworkshop.services.Test.clientsList
 
 class ClientsFragment : Fragment() {
 
@@ -27,7 +29,11 @@ class ClientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = ClientsAdapter(Test.clientsList)
+        val adapter = ClientsAdapter(clientsList)
+        binding?.rvClients?.layoutManager = LinearLayoutManager(binding?.root?.context,
+            LinearLayoutManager.VERTICAL, false)
+        binding?.rvClients?.adapter = adapter
+
     }
 
     override fun onDestroyView() {

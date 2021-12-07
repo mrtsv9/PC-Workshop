@@ -8,7 +8,7 @@
         android:id="@+id/btnClients"
         android:layout_width="330dp"
         android:layout_height="70dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="@string/clients"
         android:textSize="22sp"
