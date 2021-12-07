@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Test{
 
     private const val URL = "http://10.0.2.2:3000/"
-    private var clientsList: MutableList<Client> = emptyList<Client>().toMutableList()
+    var clientsList: MutableList<Client> = emptyList<Client>().toMutableList()
 
     fun start() {
         val gson: Gson = GsonBuilder()
@@ -33,18 +33,22 @@ object Test{
             override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
                 if(response.isSuccessful) {
                     val clients = response.body()
-                    if (clients != null) {
-                        for (i in 0 until clients.count()) {
-                            val clientId = clients[i].clientId
-                            val firstName = clients[i].firstName
-                            val lastName = clients[i].lastName
-                            val email = clients[i].email
-                            val phoneNumber = clients[i].phoneNumber
-                            clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
-                            Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString()
-                            )
-                        }
+                    clientsList.clear()
+                    clients?.map {
+                        clientsList.add(it)
                     }
+                    Log.e("KEK", clientsList.toString())
+//                    if (clients != null) {
+//                        for (i in 0 until clients.count()) {
+//                            val clientId = clients[i].clientId
+//                            val firstName = clients[i].firstName
+//                            val lastName = clients[i].lastName
+//                            val email = clients[i].email
+//                            val phoneNumber = clients[i].phoneNumber
+//                            clientsList.add(Client(clientId, firstName, lastName, email, phoneNumber))
+//                            Log.e("KEK", Client(clientId, firstName, lastName, email, phoneNumber).toString())
+//                        }
+//                    }
                 }
             }
 

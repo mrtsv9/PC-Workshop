@@ -1,22 +1,24 @@
-package com.example.pcworkshop.screen.management
+package com.example.pcworkshop.screen.pc
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.pcworkshop.databinding.FragmentManagementBinding
+import com.example.pcworkshop.R
+import com.example.pcworkshop.databinding.FragmentPcBinding
 
-class ManagementFragment: Fragment() {
+class PcFragment : Fragment() {
 
-    private var binding: FragmentManagementBinding? = null
+    private var binding: FragmentPcBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentManagementBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentPcBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -24,9 +26,8 @@ class ManagementFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         binding = null
     }
-
 }
