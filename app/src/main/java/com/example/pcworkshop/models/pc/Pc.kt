@@ -1,4 +1,4 @@
-package com.example.pcworkshop.pc
+package com.example.pcworkshop.models.pc
 
 data class Pc(
     val assemblyTypeId: Int = 0,

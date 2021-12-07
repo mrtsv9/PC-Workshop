@@ -1,4 +1,4 @@
-package com.example.pcworkshop.clients
+package com.example.pcworkshop.models.clients
 
 import com.google.gson.annotations.SerializedName
 

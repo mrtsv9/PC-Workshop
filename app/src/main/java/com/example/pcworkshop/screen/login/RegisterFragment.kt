@@ -1,4 +1,4 @@
-package com.example.pcworkshop
+package com.example.pcworkshop.screen.login
 
 
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
 import com.example.pcworkshop.services.Test
-import com.example.pcworkshop.clients.Client
+import com.example.pcworkshop.models.clients.Client
 import com.example.pcworkshop.services.TestPost
 
 class RegisterFragment: Fragment() {
