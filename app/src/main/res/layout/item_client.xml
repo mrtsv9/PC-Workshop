@@ -30,7 +30,6 @@
         app:layout_constraintStart_toStartOf="@+id/tvClientName"
         app:layout_constraintTop_toBottomOf="@+id/tvClientName" />
 
-
     <TextView
         android:id="@+id/tvClientNumber"
         android:layout_width="160dp"

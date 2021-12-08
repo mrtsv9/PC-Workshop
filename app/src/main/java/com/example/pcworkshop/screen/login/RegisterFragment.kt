@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
-import com.example.pcworkshop.services.Test
+//import com.example.pcworkshop.services.Test
 import com.example.pcworkshop.models.clients.Client
 import com.example.pcworkshop.services.TestPost
 
@@ -46,7 +46,7 @@ class RegisterFragment: Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Test.start()
+//        Test.start()
     }
 
     override fun onDestroy() {

@@ -15,7 +15,7 @@ import com.example.pcworkshop.screen.employees.EmployeesFragment
 import com.example.pcworkshop.screen.management.ManagementFragment
 import com.example.pcworkshop.screen.orders.OrdersFragment
 import com.example.pcworkshop.screen.pc.PcFragment
-import com.example.pcworkshop.services.Test
+//import com.example.pcworkshop.services.Test
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        Test.start()
+//        Test.start()
     }
 
 //    fun hideBottomNavView() {

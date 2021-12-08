@@ -69,4 +69,12 @@ dependencies {
     implementation "com.google.code.gson:gson:2.8.7" //чтобы преобразовывать Json -> Объект
     implementation "com.squareup.okhttp3:logging-interceptor:3.14.1" //для логов в ретрофите
 
+    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation 'com.squareup.retrofit2:converter-moshi:2.4.0'
+
+    // ViewModels And LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'org.koin:koin-android-ext:2.2.2'
+    implementation 'org.koin:koin-androidx-viewmodel:2.2.2'
+
 }

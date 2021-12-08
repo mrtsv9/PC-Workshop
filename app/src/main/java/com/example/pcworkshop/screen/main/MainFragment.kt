@@ -10,6 +10,7 @@ import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentMainBinding
 import com.example.pcworkshop.screen.clients.ClientsFragment
 import com.example.pcworkshop.screen.employees.EmployeesFragment
+import com.example.pcworkshop.screen.management.ManagementFragment
 import com.example.pcworkshop.screen.orders.OrdersFragment
 import com.example.pcworkshop.screen.pc.PcFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,6 +42,7 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val navView = binding?.bottomNavView
         when(item.itemId) {
+            R.id.itemManagement -> setCurrentFragment(ManagementFragment())
             R.id.itemClients -> setCurrentFragment(ClientsFragment())
             R.id.itemOrders -> setCurrentFragment(OrdersFragment())
             R.id.itemPc -> setCurrentFragment(PcFragment())
@@ -55,4 +57,5 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
             commit()
         }
     }
+
 }

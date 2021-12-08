@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
 import com.example.pcworkshop.models.clients.Client
 
-class ClientsAdapter(
-    private val clientsList: List<Client>
-    ): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
+class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
+
+    private var clientsList = emptyList<Client>()
 
     class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val tvName: TextView = itemView.findViewById(R.id.tvClientName)
@@ -37,5 +37,12 @@ class ClientsAdapter(
 
     override fun getItemCount(): Int {
         return clientsList.size
+    }
+
+    fun setData(clients: List<Client>?) {
+        if (clients != null) {
+            this.clientsList = clients
+        }
+        notifyDataSetChanged()
     }
 }
