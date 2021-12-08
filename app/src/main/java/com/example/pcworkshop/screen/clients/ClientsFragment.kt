@@ -29,6 +29,7 @@ class ClientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val adapter = ClientsAdapter(clientsList)
         binding?.rvClients?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
