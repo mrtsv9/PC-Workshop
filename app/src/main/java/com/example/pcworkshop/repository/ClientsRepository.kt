@@ -16,47 +16,46 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ClientsRepository {
 
-    suspend fun getAllClients(): List<Client>? {
+    fun getAllClients(): Call<List<Client>>? {
 
-//        val URL = "http://10.0.2.2:3000/"
+        val URL = "http://10.0.2.2:3000/"
 
-//        val gson: Gson = GsonBuilder()
-//            .setLenient()
-//            .create()
-//        val moshi = Moshi.Builder().
-//                add()
+        val gson: Gson = GsonBuilder()
+            .setLenient()
+            .create()
 
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl(URL)
-//            .addConverterFactory(MoshiConverterFactory.create())
-//            .build()
-//
-//        val api = retrofit.create(ClientsDao::class.java)
-//
-//        val call = api.getAllClients()
+        val retrofit = Retrofit.Builder()
+            .baseUrl(URL)
+            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build()
+
+        val api = retrofit.create(ClientsDao::class.java)
+
+        val call = api.getAllClients()
 
         val service = ServiceBuilder.buildService(ClientsDao::class.java)
         val request = service.getAllClients()
-        val myResponse: List<Client> = emptyList()
+        var myResponse: List<Client> = emptyList()
 
-        if (request.isSuccessful) {
-            return request.body()
-        }
+//        if (request.isSuccessful) {
+//            return request.body()
+//        }
 
-//        request.enqueue(object: Callback<List<Client>> {
-//            override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
-//                myResponse = response.body()
-//            }
-//
-//            override fun onFailure(call: Call<List<Client>>, t: Throwable) {
-//                Log.e("KEK", "govnoo")
-//            }
-//        })
+        call.enqueue(object: Callback<List<Client>> {
+            override fun onResponse(call: Call<List<Client>>, response: Response<List<Client>>) {
+                myResponse = response.body()!!
+            }
 
-        return if (myResponse.isNullOrEmpty()) {
-            null
-        } else myResponse
+            override fun onFailure(call: Call<List<Client>>, t: Throwable) {
+                Log.e("KEK", "govnoo")
+            }
+        })
 
+//        return if (myResponse.isNullOrEmpty()) {
+//            null
+//        } else myResponse
+        return null
     }
 
 }

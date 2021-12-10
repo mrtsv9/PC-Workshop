@@ -46,7 +46,7 @@ class ClientsFragment : Fragment() {
                 return@observe
             }
             else {
-                adapter.setData(it)
+//                adapter.setData(it)
             }
         }
 
