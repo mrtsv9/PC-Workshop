@@ -1,23 +1,18 @@
 package com.example.pcworkshop.screen.orders.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.ViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
-import com.example.pcworkshop.models.clients.Client
-import com.example.pcworkshop.models.orders.Orders
-import com.example.pcworkshop.screen.clients.ClientsFragment
-import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
+import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
 
-class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
+class OrdersAdapter(): RecyclerView.Adapter<EmployeesAdapter.ClientsViewHolder>() {
 
-    private var ordersList = emptyList<Orders>()
-    private var clientsList = emptyList<Client>()
+    private var ordersList = emptyList<com.example.pcworkshop.models.orders.Orders>()
+    private var clientsList = emptyList<Employees>()
 
     class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val tvAddress: TextView = itemView.findViewById(R.id.tvOrderAddress)
@@ -28,7 +23,7 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
         private val tvDelivery: TextView = itemView.findViewById(R.id.tvOrderDelivery)
         private val tvPayment: TextView = itemView.findViewById(R.id.tvOrderPayment)
 
-        fun bind(order: Orders, clients: List<Client>) {
+        fun bind(order: com.example.pcworkshop.models.orders.Orders, clients: List<Employees>) {
 //            ClientsFragment().getClient(order.clientId)
 //            val client = ClientsViewModel().clientLiveData
             val client = clients[order.clientId]
@@ -56,7 +51,8 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
         return ordersList.size
     }
 
-    fun setData(orders: List<Orders>?, clients: List<Client>) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(orders: List<com.example.pcworkshop.models.orders.Orders>?, clients: List<Employees>) {
         if (orders != null) {
             this.ordersList = orders
             this.clientsList = clients

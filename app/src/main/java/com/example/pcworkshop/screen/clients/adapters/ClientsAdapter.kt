@@ -1,18 +1,16 @@
 package com.example.pcworkshop.screen.clients.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
-import com.example.pcworkshop.models.clients.Client
-import com.example.pcworkshop.screen.clients.ClientsFragment
+import com.example.pcworkshop.models.clients.Clients
 
 class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
 
-    private var clientsList = emptyList<Client>()
+    private var clientsList = emptyList<Clients>()
 
     class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val tvName: TextView = itemView.findViewById(R.id.tvClientName)
@@ -20,7 +18,7 @@ class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>()
         private val tvEmail: TextView = itemView.findViewById(R.id.tvClientEmail)
         private val tvPhoneNumber: TextView = itemView.findViewById(R.id.tvClientNumber)
 
-        fun bind(item: Client) {
+        fun bind(item: Clients) {
             tvName.text = item.firstName
             tvLastName.text = item.lastName
             tvEmail.text = item.email
@@ -41,7 +39,7 @@ class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>()
         return clientsList.size
     }
 
-    fun setData(clients: List<Client>?) {
+    fun setData(clients: List<Clients>?) {
         if (clients != null) {
             this.clientsList = clients
         }

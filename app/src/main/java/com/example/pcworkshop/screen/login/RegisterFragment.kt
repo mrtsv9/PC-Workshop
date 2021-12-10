@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pcworkshop.databinding.FragmentRegisterBinding
 //import com.example.pcworkshop.services.Test
-import com.example.pcworkshop.models.clients.Client
+import com.example.pcworkshop.models.clients.Clients
 //import com.example.pcworkshop.z_depcrecated.TestPost
 
 class RegisterFragment: Fragment() {
@@ -37,7 +37,7 @@ class RegisterFragment: Fragment() {
             val email = binding?.etEmail?.text.toString()
             val phoneNumber = binding?.etPhoneNumber?.text.toString()
             val password = binding?.etPassword?.text.toString()
-            val client = Client(0, firstName, lastName, email, phoneNumber, password)
+            val client = Clients(0, firstName, lastName, email, phoneNumber, password)
 //            val post = TestPost(client)
 //            post.start()
         }

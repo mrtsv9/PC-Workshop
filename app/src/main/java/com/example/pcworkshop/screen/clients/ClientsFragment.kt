@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.databinding.FragmentClientsBinding
-import com.example.pcworkshop.models.clients.Client
 import com.example.pcworkshop.screen.clients.adapters.ClientsAdapter
 import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
 

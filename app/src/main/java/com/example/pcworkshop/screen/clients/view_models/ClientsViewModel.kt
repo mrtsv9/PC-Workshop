@@ -3,7 +3,7 @@ package com.example.pcworkshop.screen.clients.view_models
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pcworkshop.models.clients.Client
+import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.screen.clients.repository.ClientsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 class ClientsViewModel: ViewModel() {
 
     private val repository = ClientsRepository()
-    var clientsLiveData: MutableLiveData<List<Client>> = MutableLiveData()
-    var clientLiveData: MutableLiveData<Client> = MutableLiveData()
+    var clientsLiveData: MutableLiveData<List<Clients>> = MutableLiveData()
+    var clientLiveData: MutableLiveData<Clients> = MutableLiveData()
 
     fun getAllClients() {
         viewModelScope.launch(Dispatchers.IO) {

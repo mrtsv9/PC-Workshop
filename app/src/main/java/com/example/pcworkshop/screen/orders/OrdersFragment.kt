@@ -7,20 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentOrdersBinding
-import com.example.pcworkshop.models.clients.Client
+import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
-import com.example.pcworkshop.screen.orders.adapters.OrdersAdapter
-import com.example.pcworkshop.screen.orders.view_models.OrdersViewModel
+import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
+import com.example.pcworkshop.screen.employees.view_models.EmployeesViewModel
 
 class OrdersFragment : Fragment() {
 
     private var binding: FragmentOrdersBinding? = null
-    private val viewModel: OrdersViewModel by viewModels()
+    private val viewModel: EmployeesViewModel by viewModels()
     private val clientsViewModel: ClientsViewModel by viewModels()
 
-    private var clients = emptyList<Client>()
+    private var clients = emptyList<Clients>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,7 +32,7 @@ class OrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = OrdersAdapter()
+        val adapter = EmployeesAdapter()
         binding?.rvOrders?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvOrders?.adapter = adapter
@@ -44,7 +43,7 @@ class OrdersFragment : Fragment() {
         }
 
         viewModel.getAllOrders()
-        viewModel.ordersLiveData.observe(viewLifecycleOwner) {
+        viewModel.employeesLiveData.observe(viewLifecycleOwner) {
             adapter.setData(it, clients)
         }
     }

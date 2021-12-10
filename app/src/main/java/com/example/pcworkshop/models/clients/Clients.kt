@@ -2,7 +2,7 @@ package com.example.pcworkshop.models.clients
 
 import com.google.gson.annotations.SerializedName
 
-data class Client(
+data class Clients(
     var clientId: Int,
     var firstName: String = "",
     var lastName: String = "",
