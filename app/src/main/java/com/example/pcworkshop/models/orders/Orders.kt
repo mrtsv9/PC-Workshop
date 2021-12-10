@@ -5,7 +5,9 @@ data class Orders(
     var address: String = "",
     var clientId: Int = 0,
     var deliveryMethodId: Int = 0,
-    val delivery: DeliveryMethods,
+//    val delivery: DeliveryMethods,
+    val delivery: DeliveryMethods = DeliveryMethods(),
     var paymentMethodId: Int = 0,
-    val payment: PaymentMethods
+//    val payment: PaymentMethods
+    val payment: PaymentMethods = PaymentMethods()
 )

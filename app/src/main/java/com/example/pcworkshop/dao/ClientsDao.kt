@@ -14,7 +14,7 @@ interface ClientsDao {
     suspend fun getAllClients(): Response<List<Client>>
 
     @GET("clients/{id}")
-    fun getClient(@Path("id") id: Int): Call<Client>
+    suspend fun getClient(@Path("id") id: Int): Response<Client>
 
     @POST("clients/create")
     fun addClient(@Body client: Client): Call<Client>

@@ -1,6 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/order_address"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Адрес"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/tvAddress"
+        app:layout_constraintTop_toTopOf="@+id/tvAddress" />
+
+    <TextView
+        android:id="@+id/tvClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Клиент:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvAddress"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+    <TextView
+        android:id="@+id/tvOrderClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Имя"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvClient"
+        app:layout_constraintTop_toTopOf="@+id/tvClient" />
+
+    <TextView
+        android:id="@+id/tvOrderClientLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Фамилия"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvOrderClientName"
+        app:layout_constraintTop_toTopOf="@+id/tvOrderClientName" />
+
+    <TextView
+        android:id="@+id/tvContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Контактные данные: "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvClient"
+        app:layout_constraintTop_toBottomOf="@+id/tvClient" />
+
+    <TextView
+        android:id="@+id/tvOrderClientEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Email "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvClient"
+        app:layout_constraintTop_toBottomOf="@+id/tvContacts" />
+
+    <TextView
+        android:id="@+id/tvOrderClientNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Number "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvClient"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderClientEmail" />
+
+    <TextView
+        android:id="@+id/tvDelivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Доставка:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderClientNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderClientNumber" />
+
+    <TextView
+        android:id="@+id/tvOrderDelivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="способ доставки"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvDelivery"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderClientNumber" />
+
+    <TextView
+        android:id="@+id/tvPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Оплата:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderClientNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvDelivery" />
+
+    <TextView
+        android:id="@+id/tvOrderPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="способ оплаты"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvDelivery"
+        app:layout_constraintTop_toTopOf="@+id/tvPayment" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="3dp"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPayment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
