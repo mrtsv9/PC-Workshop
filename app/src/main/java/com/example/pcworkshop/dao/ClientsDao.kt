@@ -11,7 +11,7 @@ import retrofit2.http.Path
 interface ClientsDao {
 
     @GET("clients")
-    fun getAllClients(): Call<List<Client>>
+    suspend fun getAllClients(): Response<List<Client>>
 
     @GET("clients/{id}")
     fun getClient(@Path("id") id: Int): Call<Client>

@@ -1,5 +1,6 @@
-package com.example.pcworkshop.screen.adapters
+package com.example.pcworkshop.screen.clients.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
 import com.example.pcworkshop.models.clients.Client
+import com.example.pcworkshop.screen.clients.ClientsFragment
 
 class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
 
@@ -45,4 +47,5 @@ class ClientsAdapter(): RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>()
         }
         notifyDataSetChanged()
     }
+
 }
