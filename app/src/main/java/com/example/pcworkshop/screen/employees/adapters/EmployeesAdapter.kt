@@ -7,39 +7,50 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
-import com.example.pcworkshop.models.clients.Clients
-import com.example.pcworkshop.models.orders.Orders
+import com.example.pcworkshop.models.employees.Employees
 
-class EmployeesAdapter(): RecyclerView.Adapter<EmployeesAdapter.ClientsViewHolder>() {
+class EmployeesAdapter(): RecyclerView.Adapter<EmployeesAdapter.EmployeesViewHolder>() {
 
-    private var ordersList = emptyList<Orders>()
+    private var employeesList = emptyList<Employees>()
 
-    class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class EmployeesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        private val tvName: TextView = itemView.findViewById(R.id.tvEmployeeName)
+        private val tvLastName: TextView = itemView.findViewById(R.id.tvEmployeeLastName)
+        private val tvMiddleName: TextView = itemView.findViewById(R.id.tvEmployeeMiddleName)
+        private val tvAddress: TextView = itemView.findViewById(R.id.tvEmployeeAddress)
+        private val tvNumber: TextView = itemView.findViewById(R.id.tvEmployeeNumber)
+        private val tvEmail: TextView = itemView.findViewById(R.id.tvEmployeeEmail)
+        private val tvPosition: TextView = itemView.findViewById(R.id.tvEmployeePosition)
 
-
-        fun bind(order: com.example.pcworkshop.models.orders.Orders) {
-
+        fun bind(employee: Employees) {
+            tvName.text = employee.firstName
+            tvLastName.text = employee.lastName
+            tvMiddleName.text = employee.middleName
+            tvAddress.text = employee.address
+            tvNumber.text = employee.phoneNumber
+            tvEmail.text = employee.email
+            tvPosition.text = employee.position.name
         }
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientsViewHolder {
-        return ClientsViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_order, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeesViewHolder {
+        return EmployeesViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_employee, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ClientsViewHolder, position: Int) {
-        holder.bind(ordersList[position])
+    override fun onBindViewHolder(holder: EmployeesViewHolder, position: Int) {
+        holder.bind(employeesList[position])
     }
 
     override fun getItemCount(): Int {
-        return ordersList.size
+        return employeesList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(orders: List<com.example.pcworkshop.models.orders.Orders>?) {
-        if (orders != null) {
-            this.ordersList = orders
+    fun setData(employees: List<Employees>?) {
+        if (employees != null) {
+            this.employeesList = employees
         }
         notifyDataSetChanged()
     }

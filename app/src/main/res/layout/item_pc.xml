@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvPcTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUPER PC"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPcName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Клиент:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcTitle" />
+
+    <TextView
+        android:id="@+id/tvPcClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="имя"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcName"
+        app:layout_constraintTop_toTopOf="@+id/tvPcName" />
+
+    <TextView
+        android:id="@+id/tvPcClientLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="фамилия"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcClientName"
+        app:layout_constraintTop_toTopOf="@+id/tvPcName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Заказ"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/tvPcName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

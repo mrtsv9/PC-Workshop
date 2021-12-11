@@ -5,18 +5,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.screen.employees.repository.EmployeesRepository
+import com.example.pcworkshop.screen.orders.repository.OrdersRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class OrdersViewModel: ViewModel() {
 
-    private val repository = EmployeesRepository()
+    private val repository = OrdersRepository()
     var ordersLiveData: MutableLiveData<List<Orders>> = MutableLiveData()
 //    var clientLiveData: MutableLiveData<Client> = MutableLiveData()
 
     fun getAllOrders() {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repository.getAllEmployees()
+            val response = repository.getAllOrders()
             ordersLiveData.postValue(response.body())
         }
     }

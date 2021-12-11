@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
+import com.example.pcworkshop.models.clients.Clients
+import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
 
-class OrdersAdapter(): RecyclerView.Adapter<EmployeesAdapter.ClientsViewHolder>() {
+class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
 
-    private var ordersList = emptyList<com.example.pcworkshop.models.orders.Orders>()
-    private var clientsList = emptyList<Employees>()
+    private var ordersList = emptyList<Orders>()
+    private var clientsList = emptyList<Clients>()
 
     class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val tvAddress: TextView = itemView.findViewById(R.id.tvOrderAddress)
@@ -23,7 +25,7 @@ class OrdersAdapter(): RecyclerView.Adapter<EmployeesAdapter.ClientsViewHolder>(
         private val tvDelivery: TextView = itemView.findViewById(R.id.tvOrderDelivery)
         private val tvPayment: TextView = itemView.findViewById(R.id.tvOrderPayment)
 
-        fun bind(order: com.example.pcworkshop.models.orders.Orders, clients: List<Employees>) {
+        fun bind(order: Orders, clients: List<Clients>) {
 //            ClientsFragment().getClient(order.clientId)
 //            val client = ClientsViewModel().clientLiveData
             val client = clients[order.clientId]
@@ -52,7 +54,7 @@ class OrdersAdapter(): RecyclerView.Adapter<EmployeesAdapter.ClientsViewHolder>(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(orders: List<com.example.pcworkshop.models.orders.Orders>?, clients: List<Employees>) {
+    fun setData(orders: List<Orders>?, clients: List<Clients>) {
         if (orders != null) {
             this.ordersList = orders
             this.clientsList = clients

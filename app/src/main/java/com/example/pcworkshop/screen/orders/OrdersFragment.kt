@@ -12,11 +12,13 @@ import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
 import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
 import com.example.pcworkshop.screen.employees.view_models.EmployeesViewModel
+import com.example.pcworkshop.screen.orders.adapters.OrdersAdapter
+import com.example.pcworkshop.screen.orders.view_models.OrdersViewModel
 
 class OrdersFragment : Fragment() {
 
     private var binding: FragmentOrdersBinding? = null
-    private val viewModel: EmployeesViewModel by viewModels()
+    private val viewModel: OrdersViewModel by viewModels()
     private val clientsViewModel: ClientsViewModel by viewModels()
 
     private var clients = emptyList<Clients>()
@@ -32,7 +34,7 @@ class OrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = EmployeesAdapter()
+        val adapter = OrdersAdapter()
         binding?.rvOrders?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvOrders?.adapter = adapter
@@ -40,12 +42,12 @@ class OrdersFragment : Fragment() {
         clientsViewModel.getAllClients()
         clientsViewModel.clientsLiveData.observe(viewLifecycleOwner) {
             clients = it
+            viewModel.getAllOrders()
+            viewModel.ordersLiveData.observe(viewLifecycleOwner) { orders ->
+                adapter.setData(orders, clients)
+            }
         }
 
-        viewModel.getAllOrders()
-        viewModel.employeesLiveData.observe(viewLifecycleOwner) {
-            adapter.setData(it, clients)
-        }
     }
 
     override fun onDestroyView() {

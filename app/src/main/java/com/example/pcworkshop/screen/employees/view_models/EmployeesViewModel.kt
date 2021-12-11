@@ -13,7 +13,7 @@ class EmployeesViewModel: ViewModel() {
     private val repository = EmployeesRepository()
     var employeesLiveData: MutableLiveData<List<Employees>> = MutableLiveData()
 
-    fun getAllOrders() {
+    fun getAllEmployees() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getAllEmployees()
             employeesLiveData.postValue(response.body())
