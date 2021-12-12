@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentEmployeesBinding
 import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
 import com.example.pcworkshop.screen.employees.view_models.EmployeesViewModel

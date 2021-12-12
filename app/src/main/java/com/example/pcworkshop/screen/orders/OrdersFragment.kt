@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.databinding.FragmentOrdersBinding
 import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
-import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
-import com.example.pcworkshop.screen.employees.view_models.EmployeesViewModel
 import com.example.pcworkshop.screen.orders.adapters.OrdersAdapter
 import com.example.pcworkshop.screen.orders.view_models.OrdersViewModel
 

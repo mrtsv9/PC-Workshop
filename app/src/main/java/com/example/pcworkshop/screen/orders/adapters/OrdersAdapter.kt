@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pcworkshop.R
 import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.models.orders.Orders
-import com.example.pcworkshop.screen.employees.adapters.EmployeesAdapter
 
 class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
 
@@ -17,6 +16,7 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
     private var clientsList = emptyList<Clients>()
 
     class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        private val tvOrderId: TextView = itemView.findViewById(R.id.tvOrderId)
         private val tvAddress: TextView = itemView.findViewById(R.id.tvOrderAddress)
         private val tvClientName: TextView = itemView.findViewById(R.id.tvOrderClientName)
         private val tvClientLastName: TextView = itemView.findViewById(R.id.tvOrderClientLastName)
@@ -28,7 +28,8 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
         fun bind(order: Orders, clients: List<Clients>) {
 //            ClientsFragment().getClient(order.clientId)
 //            val client = ClientsViewModel().clientLiveData
-            val client = clients[order.clientId]
+            val client = clients[order.clientId - 1]
+            tvOrderId.text = order.orderId.toString()
             tvAddress.text = order.address
             tvClientName.text = client.firstName
             tvClientLastName.text = client.lastName

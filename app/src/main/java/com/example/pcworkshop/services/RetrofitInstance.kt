@@ -7,6 +7,7 @@ class RetrofitInstance {
 
     companion object {
         private const val URL = "http://10.0.2.2:3000/"
+//        private const val URL = "http://192.168.0.13:3000/"
 
         fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder()

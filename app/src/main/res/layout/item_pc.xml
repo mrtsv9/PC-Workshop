@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tvPcTitle"
@@ -53,14 +54,131 @@
         app:layout_constraintTop_toTopOf="@+id/tvPcName" />
 
     <TextView
+        android:id="@+id/tvPcId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Заказ"
+        android:text="Заказ под номером:"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@+id/tvPcName"
         app:layout_constraintTop_toBottomOf="@+id/tvPcName" />
+
+    <TextView
+        android:id="@+id/tvPcOrderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="12"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcId"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcName" />
+
+    <TextView
+        android:id="@+id/tvOrderType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Тип заказа:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvPcId"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcId" />
+
+    <TextView
+        android:id="@+id/tvPcOrderType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Готовая сборка"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvOrderType"
+        app:layout_constraintTop_toTopOf="@+id/tvOrderType" />
+
+    <TextView
+        android:id="@+id/tvEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Выполнен сотрудником:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderType"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderType" />
+
+    <TextView
+        android:id="@+id/tvPcEmployeeLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="фамилия"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderType"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmployee" />
+
+    <TextView
+        android:id="@+id/tvPcEmployeeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="имя"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcEmployeeLastName"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmployee" />
+
+    <TextView
+        android:id="@+id/tvPcEmployeeMiddleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="отчество"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_goneMarginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcEmployeeName"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmployee" />
+
+    <TextView
+        android:id="@+id/tvListOfAccessories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Список входящих комплектующих"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcEmployeeName" />
+
+    <View
+        android:background="@drawable/divider_corner"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvListOfAccessories" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAccessories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:nestedScrollingEnabled="false"
+        tools:listitem="@layout/item_accessory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvListOfAccessories" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
