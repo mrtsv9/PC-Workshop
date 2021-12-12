@@ -1,14 +1,12 @@
 package com.example.pcworkshop.screen.pc.adapters
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pcworkshop.MainActivity
 import com.example.pcworkshop.R
 import com.example.pcworkshop.models.accessories.Accessories
 import com.example.pcworkshop.models.clients.Clients
@@ -24,8 +22,9 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
     private var ordersList = emptyList<Orders>()
     private var clientsList = emptyList<Clients>()
     private var employeesList = emptyList<Employees>()
-    private var pcAccessoriesList = emptyList<PcAccessories>()
-    private var accessoriesList = emptyList<Accessories>()
+    private var pcAccessoriesList: MutableList<PcAccessories> = emptyList<PcAccessories>().toMutableList()
+    private var accessoriesList: MutableList<Accessories> = emptyList<Accessories>().toMutableList()
+    private var myAccessoriesList: MutableList<Accessories> = emptyList<Accessories>().toMutableList()
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -75,10 +74,21 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
             clientsList,
             ordersList,
             employeesList)
+
+        myAccessoriesList.clear()
+        pcAccessoriesList.forEach {
+            if (it.pcId == pcList[position].pcId) {
+                myAccessoriesList.add(accessoriesList[it.accessoryId - 1])
+//                accessoriesList.removeAt(it.accessoryId)
+//                return
+            }
+        }
+
+
         val childLayoutManager = LinearLayoutManager(holder.rvAccessories.context, LinearLayoutManager.VERTICAL, false)
         holder.rvAccessories.apply {
             layoutManager = childLayoutManager
-            adapter = AccessoriesAdapter(accessoriesList)
+            adapter = AccessoriesAdapter(myAccessoriesList)
             setRecycledViewPool(viewPool)
         }
     }
@@ -95,17 +105,20 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 //    }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(computers: List<Pc>?,
-                clients: List<Clients>,
-                orders: List<Orders>,
-                employees: List<Employees>,
-                accessories: List<Accessories>) {
+    fun setData(
+        computers: List<Pc>?,
+        clients: List<Clients>,
+        orders: List<Orders>,
+        employees: List<Employees>,
+        pcAccessories: List<PcAccessories>,
+        accessories: List<Accessories>) {
         if (computers != null) {
             this.pcList = computers
             this.clientsList = clients
             this.ordersList = orders
             this.employeesList = employees
-            this.accessoriesList = accessories
+            this.pcAccessoriesList = pcAccessories.toMutableList()
+            this.accessoriesList = accessories.toMutableList()
         }
         notifyDataSetChanged()
     }

@@ -49,6 +49,7 @@
         android:layout_height="55dp"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount"
@@ -74,7 +75,7 @@
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:hint="@string/enter_login"
+            android:hint="Введите логин"
             android:inputType="text"
             android:paddingStart="38dp"
             android:background="@drawable/border">
@@ -84,11 +85,12 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailLayout"
+        android:id="@+id/addingClientsEmailLayout"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameLayout"
@@ -111,11 +113,11 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etAddingClientsEmail"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:hint="@string/enter_password"
+            android:hint="Введите пароль"
             android:inputType="text"
             android:paddingStart="38dp"
             android:background="@drawable/border">
@@ -129,12 +131,12 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_button"
-        android:text="@string/sign_in"
+        android:text="Войти"
         android:textSize="20sp"
         android:fontFamily="@font/poppins_light"
-        app:layout_constraintEnd_toEndOf="@+id/emailLayout"
-        app:layout_constraintStart_toStartOf="@+id/emailLayout"
-        app:layout_constraintTop_toBottomOf="@+id/emailLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/addingClientsEmailLayout"
+        app:layout_constraintStart_toStartOf="@+id/addingClientsEmailLayout"
+        app:layout_constraintTop_toBottomOf="@+id/addingClientsEmailLayout" />
 
     <TextView
         android:id="@+id/textView"
@@ -143,6 +145,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_light"
         android:text="OR"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnSingIn"
@@ -178,9 +181,9 @@
         android:id="@+id/tvHave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="-40dp"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/don_t_have_a_account"
+        android:text="Нет аккаунта?"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/btnSingIn"
         app:layout_constraintStart_toStartOf="@+id/btnSingIn"
@@ -191,12 +194,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="@string/register"
-        android:textSize="16sp"
-        android:textFontWeight="1000"
+        android:text="Регистрация"
         android:textColor="#40BFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/tvHave"
-        app:layout_constraintEnd_toEndOf="@+id/appCompatButton"
-        app:layout_constraintStart_toEndOf="@+id/tvHave" />
+        android:textFontWeight="1000"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="@+id/tvHave"
+        app:layout_constraintStart_toStartOf="@+id/tvHave"
+        app:layout_constraintTop_toBottomOf="@+id/tvHave" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

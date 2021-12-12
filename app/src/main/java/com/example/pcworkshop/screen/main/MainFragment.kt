@@ -15,7 +15,7 @@ import com.example.pcworkshop.screen.orders.OrdersFragment
 import com.example.pcworkshop.screen.pc.PcFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
+class MainFragment: Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private var binding: FragmentMainBinding? = null
 
@@ -31,6 +31,7 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setCurrentFragment(ManagementFragment())
         binding?.bottomNavView?.setOnNavigationItemSelectedListener(this)
     }
 
@@ -39,8 +40,14 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
         binding = null
     }
 
-        override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val navView = binding?.bottomNavView
+//    private fun performAction() {
+//        when(action.actions) {
+//             "management" -> setCurrentFragment(ManagementFragment())
+//             "clients" -> setCurrentFragment(ClientsFragment())
+//        }
+//    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.itemManagement -> setCurrentFragment(ManagementFragment())
             R.id.itemClients -> setCurrentFragment(ClientsFragment())
@@ -51,11 +58,19 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
         return true
     }
 
-    private fun setCurrentFragment(fragment: Fragment) {
+    fun setCurrentFragment(fragment: Fragment) {
         childFragmentManager.beginTransaction().apply {
             replace(R.id.mainContainer,fragment)
             commit()
         }
+    }
+
+    fun showBottomNav() {
+        binding?.bottomNavView?.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNav() {
+        binding?.bottomNavView?.visibility = View.INVISIBLE
     }
 
 }

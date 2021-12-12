@@ -42,16 +42,6 @@ class ClientsFragment : Fragment() {
         viewModel.clientsLiveData.observe(viewLifecycleOwner) {
             adapter.setData(it)
         }
-//        viewModel.getClients()
-//        viewModel.clientsLiveData.observe(viewLifecycleOwner) {
-//            if(it == null) {
-//                Log.e("KEK", "govno")
-//                return@observe
-//            }
-//            else {
-//                adapter.setData(it)
-//            }
-//        }
 
     }
 

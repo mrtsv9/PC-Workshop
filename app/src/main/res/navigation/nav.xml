@@ -35,5 +35,87 @@
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_clientsAddingFragment"
+            app:destination="@id/clientsAddingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_managementFragment"
+            app:destination="@id/managementFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_clientsFragment"
+            app:destination="@id/clientsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_accessoriesFragment"
+            app:destination="@id/accessoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_employeesFragment"
+            app:destination="@id/employeesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pcFragment"
+            app:destination="@id/pcFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_positionsFragment"
+            app:destination="@id/positionsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_typesOfAccessoriesFragment"
+            app:destination="@id/typesOfAccessoriesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/clientsAddingFragment"
+        android:name="com.example.pcworkshop.screen.clients.ClientsAddingFragment"
+        android:label="fragment_clients_adding"
+        tools:layout="@layout/fragment_clients_adding" >
+        <action
+            android:id="@+id/action_clientsAddingFragment_to_clientsFragment"
+            app:destination="@id/clientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/managementFragment"
+        android:name="com.example.pcworkshop.screen.management.ManagementFragment"
+        android:label="ManagementFragment" >
+        <action
+            android:id="@+id/action_managementFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_managementFragment_to_clientsAddingFragment"
+            app:destination="@id/clientsAddingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accessoriesFragment"
+        android:name="com.example.pcworkshop.screen.accessories.AccessoriesFragment"
+        android:label="fragment_accessories"
+        tools:layout="@layout/fragment_accessories" />
+    <fragment
+        android:id="@+id/clientsFragment"
+        android:name="com.example.pcworkshop.screen.clients.ClientsFragment"
+        android:label="fragment_clients"
+        tools:layout="@layout/fragment_clients" />
+    <fragment
+        android:id="@+id/employeesFragment"
+        android:name="com.example.pcworkshop.screen.employees.EmployeesFragment"
+        android:label="fragment_employees"
+        tools:layout="@layout/fragment_employees" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.pcworkshop.screen.orders.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/pcFragment"
+        android:name="com.example.pcworkshop.screen.pc.PcFragment"
+        android:label="fragment_pc"
+        tools:layout="@layout/fragment_pc" />
+    <fragment
+        android:id="@+id/positionsFragment"
+        android:name="com.example.pcworkshop.screen.positions.PositionsFragment"
+        android:label="fragment_positions"
+        tools:layout="@layout/fragment_positions" />
+    <fragment
+        android:id="@+id/typesOfAccessoriesFragment"
+        android:name="com.example.pcworkshop.screen.types_of_accessories.TypesOfAccessoriesFragment"
+        android:label="fragment_types_of_accessories"
+        tools:layout="@layout/fragment_types_of_accessories" />
 </navigation>
