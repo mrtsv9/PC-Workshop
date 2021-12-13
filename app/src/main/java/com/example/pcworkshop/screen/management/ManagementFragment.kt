@@ -35,6 +35,18 @@ class ManagementFragment: Fragment() {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToOrdersAddingFragment())
         }
 
+        binding?.btnEmployees?.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToEmployeesAddingFragment())
+        }
+
+        binding?.btnPositions?.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToPositionsFragment())
+        }
+
+        binding?.btnAccessories?.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToAccessoriesFragment())
+        }
+
     }
 
     override fun onDestroy() {

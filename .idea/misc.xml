@@ -3,16 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/drawable/bg_button.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/drawable/divider_corner.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_accessories.xml" value="0.25" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_accessories_adding.xml" value="0.2509057971014493" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_clients.xml" value="0.1956521739130435" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_clients_adding.xml" value="0.2509057971014493" />
         <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_employees.xml" value="0.375" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_employees_adding.xml" value="0.335" />
         <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_orders.xml" value="0.19972826086956522" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_orders_adding.xml" value="0.1956521739130435" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_positions.xml" value="0.1" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/fragment_register.xml" value="0.2509057971014493" />
         <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/item_employee.xml" value="0.1" />
         <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/item_order.xml" value="0.2595108695652174" />
         <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/item_pc.xml" value="0.254981884057971" />
+        <entry key="..\:/Users/MartsevPC/AndroidStudioProjects/PC-Workshop/app/src/main/res/layout/item_position.xml" value="0.2509057971014493" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/bg_button.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/border.xml" value="0.3828125" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/divider_corner.xml" value="0.3828125" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_checkmark.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first_background.xml" value="0.3828125" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/drawable/ic_first_foreground.xml" value="0.3828125" />
@@ -23,22 +32,13 @@
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout-v28/fragment_management.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout-v28/fragment_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/activity_main.xml" value="0.2875905797101449" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/dropdown_item.xml" value="0.5" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_clients.xml" value="0.19375" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_clients_adding.xml" value="0.33" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_employees_adding.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_login.xml" value="0.33" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_main.xml" value="1.0" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_management.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_orders_adding.xml" value="0.33" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_pc.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_register.xml" value="0.33" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_accessory.xml" value="0.1" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_client.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_employee.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_order.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_pc.xml" value="0.25" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_selectable_client.xml" value="0.3645833333333333" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/test.xml" value="0.28396739130434784" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/mipmap-anydpi-v26/ic_first.xml" value="0.22135416666666666" />

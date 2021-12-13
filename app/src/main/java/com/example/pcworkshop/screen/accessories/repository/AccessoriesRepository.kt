@@ -2,8 +2,11 @@ package com.example.pcworkshop.screen.accessories.repository
 
 import com.example.pcworkshop.dao.AccessoriesDao
 import com.example.pcworkshop.models.accessories.Accessories
+import com.example.pcworkshop.models.accessories.PostAccessory
 import com.example.pcworkshop.services.RetrofitInstance
+import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
 
 class AccessoriesRepository {
 
@@ -12,5 +15,9 @@ class AccessoriesRepository {
         return retrofitInstance.getAllAccessories()
     }
 
+    fun addAccessory(accessory: PostAccessory): Call<PostAccessory> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(AccessoriesDao::class.java)
+        return retrofitInstance.addAccessory(accessory)
+    }
 
 }

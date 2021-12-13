@@ -65,6 +65,9 @@
         <action
             android:id="@+id/action_mainFragment_to_ordersAddingFragment"
             app:destination="@id/ordersAddingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_employeesAddingFragment"
+            app:destination="@id/employeesAddingFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientsAddingFragment"
@@ -126,4 +129,9 @@
         android:name="com.example.pcworkshop.screen.orders.OrdersAddingFragment"
         android:label="fragment_orders_adding"
         tools:layout="@layout/fragment_orders_adding" />
+    <fragment
+        android:id="@+id/employeesAddingFragment"
+        android:name="com.example.pcworkshop.screen.employees.EmployeesAddingFragment"
+        android:label="fragment_employees_adding"
+        tools:layout="@layout/fragment_employees_adding" />
 </navigation>

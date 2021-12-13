@@ -24,12 +24,12 @@
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusBottomEnd="10dp"
         android:background="@color/white"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/person"
+            android:src="@drawable/ic_person"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
@@ -47,7 +47,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addingClientsLastNameLayout"
+        android:id="@+id/addingEmployeesLastNameLayout"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         app:counterEnabled="true"
@@ -69,12 +69,12 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/person"
+            android:src="@drawable/ic_person"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddingClientsLastName"
+            android:id="@+id/etAddingEmployeesLastName"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -95,7 +95,7 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addingClientsLastNameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/addingEmployeesLastNameLayout"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         android:layout_gravity="center"
@@ -109,12 +109,12 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/person"
+            android:src="@drawable/ic_person"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmployeesMiddleLastName"
+            android:id="@+id/etAddingEmployeesMiddleName"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -149,12 +149,12 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/person"
+            android:src="@drawable/ic_address"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmployeesAddressName"
+            android:id="@+id/etAddingEmployeesAddress"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -167,7 +167,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addingClientsEmailLayout"
+        android:id="@+id/addingEmployeesEmailLayout"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         app:counterEnabled="true"
@@ -189,12 +189,12 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/email"
+            android:src="@drawable/ic_email"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddingClientsEmail"
+            android:id="@+id/etAddingEmployeesEmail"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -207,7 +207,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addingClientsNumberLayout"
+        android:id="@+id/addingEmployeesNumberLayout"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         app:counterEnabled="true"
@@ -215,7 +215,7 @@
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addingClientsEmailLayout"
+        app:layout_constraintTop_toBottomOf="@+id/addingEmployeesEmailLayout"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         android:layout_gravity="center"
@@ -234,7 +234,7 @@
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddingClientsPhone"
+            android:id="@+id/etAddingEmployeesPhone"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -247,7 +247,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addingClientsPasswordLayout"
+        android:id="@+id/addingEmployeesPasswordLayout"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         app:counterEnabled="true"
@@ -256,7 +256,7 @@
         app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addingClientsNumberLayout"
+        app:layout_constraintTop_toBottomOf="@+id/addingEmployeesNumberLayout"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         android:layout_gravity="center"
@@ -270,12 +270,12 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/locker"
+            android:src="@drawable/ic_locker"
             android:layout_marginTop="-38dp"
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddingClientsPassword"
+            android:id="@+id/etAddingEmployeesPassword"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -284,6 +284,27 @@
             android:paddingStart="38dp"
             android:background="@drawable/border">
         </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addingEmployeePositionLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="Должность"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addingEmployeesPasswordLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/actvEmployeePosition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:inputType="none"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -296,8 +317,8 @@
         android:text="Добавить Сотрудника"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/addingClientsEmailLayout"
-        app:layout_constraintStart_toStartOf="@+id/addingClientsEmailLayout"
-        app:layout_constraintTop_toBottomOf="@+id/addingClientsPasswordLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/addingEmployeesPasswordLayout"
+        app:layout_constraintStart_toStartOf="@+id/addingEmployeesPasswordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/addingEmployeePositionLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

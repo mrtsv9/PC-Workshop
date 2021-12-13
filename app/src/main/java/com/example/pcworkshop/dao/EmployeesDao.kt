@@ -1,8 +1,12 @@
 package com.example.pcworkshop.dao
 
 import com.example.pcworkshop.models.employees.Employees
+import com.example.pcworkshop.models.employees.PostEmployee
+import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface EmployeesDao {
@@ -13,4 +17,6 @@ interface EmployeesDao {
     @GET("employees/{id}")
     suspend fun getClient(@Path("id") id: Int): Response<Employees>
 
+    @POST("employees/create")
+    fun addEmployee(@Body employee: PostEmployee): Call<PostEmployee>
 }

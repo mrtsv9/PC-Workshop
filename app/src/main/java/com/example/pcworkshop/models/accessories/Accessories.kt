@@ -6,5 +6,5 @@ data class Accessories(
     var properties: String = "",
     var price: Int = 0,
     var typeOfAccessoriesId: Int = 0,
-    val typeOfAccessories: TypeOfAccessories,
+    val typeOfAccessories: TypeOfAccessories
 )

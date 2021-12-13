@@ -10,7 +10,7 @@
         android:id="@+id/ivLogo"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -66,7 +66,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/letter"
+            android:src="@drawable/ic_letter"
             android:layout_marginTop="-36dp"
             android:layout_marginStart="8dp"/>
 
@@ -107,7 +107,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/locker"
+            android:src="@drawable/ic_locker"
             android:layout_marginTop="-36dp"
             android:layout_marginStart="8dp"/>
 
