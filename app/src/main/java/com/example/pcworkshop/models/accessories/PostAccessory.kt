@@ -6,6 +6,6 @@ data class PostAccessory(
     var name: String = "",
     var properties: String = "",
     var price: Int = 0,
-    @SerializedName("types_of_accessories_id")
+    @SerializedName("type_of_accessory_id")
     var typeOfAccessoriesId: Int = 0
 )

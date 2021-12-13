@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.databinding.FragmentPositionsBinding
 import com.example.pcworkshop.models.positions.PostPosition
 import com.example.pcworkshop.screen.positions.adapters.PositionsAdapter
+import com.example.pcworkshop.screen.positions.repository.PositionsRepository
 import com.example.pcworkshop.screen.types_of_accessories.repository.TypesOfAccessoriesRepository
 import com.example.pcworkshop.screen.positions.view_models.PositionsViewModel
 import retrofit2.Call
@@ -22,7 +23,7 @@ import retrofit2.Response
 class PositionsFragment : Fragment() {
 
     private var binding: FragmentPositionsBinding? = null
-    private val repository = TypesOfAccessoriesRepository()
+    private val repository = PositionsRepository()
     private val viewModel: PositionsViewModel by viewModels()
 
     override fun onCreateView(

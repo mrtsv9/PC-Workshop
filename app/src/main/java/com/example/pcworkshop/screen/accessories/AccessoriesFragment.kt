@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentAccessoriesBinding
@@ -60,7 +61,7 @@ class AccessoriesFragment : Fragment() {
 
     private fun fillTypeOfAccessories() {
         val typesList: MutableList<String> = emptyList<String>().toMutableList()
-        typesOfAccessoriesViewModel.positionsLiveData.observe(viewLifecycleOwner) {
+        typesOfAccessoriesViewModel.typesOfAccessoriesLiveData.observe(viewLifecycleOwner) {
             it.forEach {
                 typesList.add(it.type)
             }
@@ -78,7 +79,7 @@ class AccessoriesFragment : Fragment() {
 
         if (checkFieldsValidation(validationList)) {
             var typeOfAccessoryId = 0
-            typesOfAccessoriesViewModel.positionsLiveData.observe(viewLifecycleOwner) {
+            typesOfAccessoriesViewModel.typesOfAccessoriesLiveData.observe(viewLifecycleOwner) {
                 it.forEach {
                     if(it.type == typesOfAccessories) {
                         typeOfAccessoryId = it.typeOfAccessoryId
@@ -93,10 +94,12 @@ class AccessoriesFragment : Fragment() {
                     response: Response<PostAccessory>
                 ) {
                     Toast.makeText(context, "Комплектующая успешно добавлена!", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
                 }
 
                 override fun onFailure(call: Call<PostAccessory>, t: Throwable) {
                     Toast.makeText(context, "Комплектующая успешно добавлена!", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
                 }
             })
         }

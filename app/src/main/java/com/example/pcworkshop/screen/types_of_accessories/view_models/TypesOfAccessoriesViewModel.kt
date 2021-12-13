@@ -12,12 +12,12 @@ import kotlinx.coroutines.launch
 class TypesOfAccessoriesViewModel: ViewModel() {
 
     private val repository = TypesOfAccessoriesRepository()
-    var positionsLiveData: MutableLiveData<List<TypesOfAccessories>> = MutableLiveData()
+    var typesOfAccessoriesLiveData: MutableLiveData<List<TypesOfAccessories>> = MutableLiveData()
 
     fun getAllTypesOfAccessories() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getAllTypesOfAccessories()
-            positionsLiveData.postValue(response.body())
+            typesOfAccessoriesLiveData.postValue(response.body())
         }
     }
 

@@ -3,6 +3,7 @@ package com.example.pcworkshop.screen.types_of_accessories.repository
 import com.example.pcworkshop.dao.PositionsDao
 import com.example.pcworkshop.dao.TypesOfAccessoriesDao
 import com.example.pcworkshop.models.positions.PostPosition
+import com.example.pcworkshop.models.types_of_accessories.PostType
 import com.example.pcworkshop.models.types_of_accessories.TypesOfAccessories
 import com.example.pcworkshop.services.RetrofitInstance
 import retrofit2.Call
@@ -15,9 +16,9 @@ class TypesOfAccessoriesRepository {
         return retrofitInstance.getAllTypesOfAccessories()
     }
 
-    fun addPosition(position: PostPosition): Call<PostPosition> {
-        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(PositionsDao::class.java)
-        return  retrofitInstance.addPosition(position)
+    fun addTypeOfAccessory(type: PostType): Call<PostType> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(TypesOfAccessoriesDao::class.java)
+        return  retrofitInstance.addType(type)
     }
 
 }
