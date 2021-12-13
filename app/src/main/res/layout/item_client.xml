@@ -6,38 +6,68 @@
 
     <TextView
         android:id="@+id/tvClientName"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Имя"
         android:layout_marginStart="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvClientLastName"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
+        android:text="Фамилия"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="16sp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvClientName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvClientEmail"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="Имейл"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@+id/tvClientName"
         app:layout_constraintTop_toBottomOf="@+id/tvClientName" />
 
     <TextView
         android:id="@+id/tvClientNumber"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:textSize="16sp"
-        android:layout_marginEnd="12dp"
+        android:textColor="@color/black"
+        android:text="Номер"
         android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/tvClientEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientEmail" />
+
+    <ImageView
+        android:id="@+id/ivCheckClients"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_checkmark"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvClientLastName" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:background="@drawable/divider_corner"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvClientNumber"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

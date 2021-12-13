@@ -55,12 +55,14 @@ class ClientsAddingFragment : Fragment() {
                 override fun onResponse(call: Call<PostClient>, response: Response<PostClient>) {
                     Toast.makeText(context, "Клиент успешно добавлен!", Toast.LENGTH_SHORT).show()
 //                    MainFragment().setCurrentFragment(ClientsFragment())
+                    findNavController().popBackStack()
                 }
 
                 override fun onFailure(call: Call<PostClient>, t: Throwable) {
 //                    findNavController().navigate(ClientsAddingFragmentDirections.actionClientsAddingFragmentToClientsFragment())
 //                    (Fragment() as MainFragment).setCurrentFragment(ClientsFragment())
                     Toast.makeText(context, "Клиент успешно добавлен!", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
                 }
             })
         }

@@ -62,6 +62,9 @@
         <action
             android:id="@+id/action_mainFragment_to_typesOfAccessoriesFragment"
             app:destination="@id/typesOfAccessoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ordersAddingFragment"
+            app:destination="@id/ordersAddingFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientsAddingFragment"
@@ -118,4 +121,9 @@
         android:name="com.example.pcworkshop.screen.types_of_accessories.TypesOfAccessoriesFragment"
         android:label="fragment_types_of_accessories"
         tools:layout="@layout/fragment_types_of_accessories" />
+    <fragment
+        android:id="@+id/ordersAddingFragment"
+        android:name="com.example.pcworkshop.screen.orders.OrdersAddingFragment"
+        android:label="fragment_orders_adding"
+        tools:layout="@layout/fragment_orders_adding" />
 </navigation>

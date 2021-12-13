@@ -28,8 +28,11 @@ class ManagementFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.btnClients?.setOnClickListener {
-            findNavController().navigate(ManagementFragmentDirections.actionManagementFragmentToClientsAddingFragment())
-//            (Fragment() as? MainFragment)?.setCurrentFragment(ClientsAddingFragment())
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToClientsAddingFragment())
+        }
+
+        binding?.btnOrders?.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToOrdersAddingFragment())
         }
 
     }
