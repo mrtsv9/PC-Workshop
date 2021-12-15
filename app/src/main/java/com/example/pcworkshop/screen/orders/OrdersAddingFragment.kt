@@ -43,19 +43,52 @@ class OrdersAddingFragment : Fragment() {
         fillDelivery()
         fillPayment()
 
-        val adapter  = SelectableClientsAdapter()
-        binding?.rvSelectClients?.layoutManager = LinearLayoutManager(binding?.root?.context,
-            LinearLayoutManager.VERTICAL, false)
-        binding?.rvSelectClients?.adapter = adapter
-
         clientsViewModel.getAllClients()
         viewModel.getAllOrders()
-        clientsViewModel.clientsLiveData.observe(viewLifecycleOwner) {
-            adapter.setData(it)
-        }
+//        viewModel.getAllOrders()
 
-        binding?.btnAddOrder?.setOnClickListener {
-            addOrder()
+        if(orderToUpdate == null) {
+            val adapter = SelectableClientsAdapter()
+            binding?.rvSelectClients?.layoutManager = LinearLayoutManager(
+                binding?.root?.context,
+                LinearLayoutManager.VERTICAL, false
+            )
+            binding?.rvSelectClients?.adapter = adapter
+
+            clientsViewModel.getAllClients()
+//            viewModel.getAllOrders()
+            clientsViewModel.clientsLiveData.observe(viewLifecycleOwner) {
+                adapter.setData(it)
+            }
+
+            binding?.btnAddOrder?.setOnClickListener {
+                addOrder()
+            }
+        } else {
+
+            setFields()
+
+            val adapter = SelectableClientsAdapter()
+            binding?.rvSelectClients?.layoutManager = LinearLayoutManager(
+                binding?.root?.context,
+                LinearLayoutManager.VERTICAL, false
+            )
+            binding?.rvSelectClients?.adapter = adapter
+
+
+            clientsViewModel.clientsLiveData.observe(viewLifecycleOwner) {
+                adapter.setData(it)
+            }
+
+            binding?.btnAddOrder?.setOnClickListener {
+                updateOrder()
+                clearAll()
+            }
+
+            binding?.btnDeleteOrder?.setOnClickListener {
+                deleteOrder()
+                clearAll()
+            }
         }
     }
 
@@ -107,6 +140,55 @@ class OrdersAddingFragment : Fragment() {
         }
     }
 
+    private fun updateOrder() {
+        val address = binding?.etAddingOrdersAddress?.text.toString()
+        val delivery = binding?.actvDelivery?.text.toString()
+        val payment = binding?.actvPayment?.text.toString()
+        val clientId = selectedClientId
+        if(
+            clientId == 0 ||
+            address.isEmpty() ||
+            address.length >= 20 ||
+            delivery.isEmpty() ||
+            payment.isEmpty()
+        ) {
+            Toast.makeText(context, "Заполните все полня корректно! ", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            orderToUpdate?.let {
+                repository.updateOrder(
+                    it.orderId, address, clientId,
+                    getPaymentMethodId(payment), getDeliveryMethodId(delivery)
+                )
+            }?.enqueue(object : Callback<PostOrder> {
+
+                override fun onResponse(call: Call<PostOrder>, response: Response<PostOrder>) {
+                    Toast.makeText(context, "Заказ успешно изменен! ", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
+                }
+
+                override fun onFailure(call: Call<PostOrder>, t: Throwable) {
+                    Toast.makeText(context, "Заказ успешно изменен! ", Toast.LENGTH_SHORT).show()
+                    findNavController().popBackStack()
+                }
+            })
+        }
+    }
+
+    private fun deleteOrder() {
+        orderToUpdate?.let { repository.deleteOrder(it.orderId) }?.enqueue(object : Callback<Unit> {
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                Toast.makeText(context, "Заказ успешно удален! ", Toast.LENGTH_SHORT).show()
+                findNavController().popBackStack()
+            }
+
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                Toast.makeText(context, "Заказ успешно удален! ", Toast.LENGTH_SHORT).show()
+                findNavController().popBackStack()
+            }
+        })
+    }
+
     private fun getDeliveryMethodId(type: String): Int {
         var deliveryMethodId = 0
         val orders = viewModel.ordersLiveData
@@ -133,6 +215,40 @@ class OrdersAddingFragment : Fragment() {
         return paymentMethodId
     }
 
+    private fun setFields() {
+        binding?.btnAddOrder?.text = "Редактировать заказ"
+        binding?.btnDeleteOrder?.visibility = View.VISIBLE
+
+        binding?.etAddingOrdersAddress?.setText(orderToUpdate?.address)
+        var deliveryMethod = ""
+        deliveryMethod = if (orderToUpdate?.deliveryMethodId == 1) {
+            "Доставка"
+        } else "Самовывоз"
+        binding?.actvDelivery?.setText(deliveryMethod)
+        var paymentMethod = ""
+        when (orderToUpdate?.paymentMethodId) {
+            1 -> {
+                paymentMethod = "Картой курьеру"
+            }
+            2 -> {
+                paymentMethod =  "Картой онлайн"
+            }
+            3 -> paymentMethod =  "Наличными"
+        }
+        fillDelivery()
+        fillPayment()
+        binding?.actvPayment?.setText(paymentMethod)
+        selectedClientId = orderToUpdate?.clientId ?: 0
+    }
+
+    private fun clearAll() {
+        binding?.btnAddOrder?.text = "Добавить заказ"
+        binding?.btnAddOrder?.visibility = View.GONE
+        selectedClientId = 0
+        checker = false
+        orderToUpdate = null
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
@@ -141,5 +257,7 @@ class OrdersAddingFragment : Fragment() {
     companion object {
         var selectedClientId = 0
         var checker = false
+
+        var orderToUpdate: Orders? = null
     }
 }

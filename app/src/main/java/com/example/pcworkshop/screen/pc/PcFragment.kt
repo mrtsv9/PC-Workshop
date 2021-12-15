@@ -31,7 +31,6 @@ class PcFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentPcBinding.inflate(inflater, container, false)
         return binding?.root
     }
@@ -39,7 +38,7 @@ class PcFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = PcAdapter()
+        val adapter = PcAdapter() { onUpdateClickListener() }
         binding?.rvPc?.layoutManager = LinearLayoutManager(
             binding?.root?.context,
             LinearLayoutManager.VERTICAL, false
@@ -66,6 +65,9 @@ class PcFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun onUpdateClickListener() {
 
     }
 

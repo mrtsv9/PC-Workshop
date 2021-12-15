@@ -4,10 +4,7 @@ import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.models.clients.PostClient
 import retrofit2.Call
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ClientsDao {
 
@@ -19,5 +16,20 @@ interface ClientsDao {
 
     @POST("clients/create")
     fun addClient(@Body client: PostClient): Call<PostClient>
+
+    @FormUrlEncoded
+    @PUT("clients/update/{client_id}")
+    fun updateClient(
+        @Path("client_id") id: Int,
+        @Field("first_name") firstName: String,
+        @Field("last_name") lastName: String,
+        @Field("email") email: String,
+        @Field("phone_number") phoneNumber: String,
+        @Field("password") password: String
+    ): Call<PostClient>
+
+
+    @DELETE("clients/delete/{id}")
+    fun deleteClient(@Path("id") id: Int): Call<Unit>
 
 }

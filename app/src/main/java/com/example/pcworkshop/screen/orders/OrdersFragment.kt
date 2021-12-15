@@ -6,10 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.databinding.FragmentOrdersBinding
 import com.example.pcworkshop.models.clients.Clients
+import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.screen.clients.view_models.ClientsViewModel
+import com.example.pcworkshop.screen.main.MainFragmentDirections
+import com.example.pcworkshop.screen.orders.OrdersAddingFragment.Companion.checker
+import com.example.pcworkshop.screen.orders.OrdersAddingFragment.Companion.orderToUpdate
 import com.example.pcworkshop.screen.orders.adapters.OrdersAdapter
 import com.example.pcworkshop.screen.orders.view_models.OrdersViewModel
 
@@ -32,7 +37,7 @@ class OrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = OrdersAdapter()
+        val adapter = OrdersAdapter() { onUpdateClickListener(it) }
         binding?.rvOrders?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvOrders?.adapter = adapter
@@ -46,6 +51,12 @@ class OrdersFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun onUpdateClickListener(order: Orders) {
+        orderToUpdate = order
+        checker = true
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToOrdersAddingFragment())
     }
 
     override fun onDestroyView() {

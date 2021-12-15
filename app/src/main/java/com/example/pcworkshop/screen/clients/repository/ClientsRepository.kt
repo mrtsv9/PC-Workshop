@@ -24,4 +24,19 @@ class ClientsRepository {
         return retrofitInstance.addClient(client)
     }
 
+    fun updateClient(clientId: Int,
+                     firstName: String,
+                     lastName: String,
+                     email: String,
+                     phoneNumber: String,
+                     password: String): Call<PostClient> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(ClientsDao::class.java)
+        return retrofitInstance.updateClient(clientId, firstName, lastName, email, phoneNumber, password)
+    }
+
+    fun deleteClient(clientId: Int): Call<Unit> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(ClientsDao::class.java)
+        return retrofitInstance.deleteClient(clientId)
+    }
+
 }

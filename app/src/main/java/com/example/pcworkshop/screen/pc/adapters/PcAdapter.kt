@@ -16,7 +16,9 @@ import com.example.pcworkshop.models.pc.Pc
 import com.example.pcworkshop.models.pc_accessories.PcAccessories
 import com.example.pcworkshop.screen.accessories.adapters.AccessoriesAdapter
 
-class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
+class PcAdapter(
+    private val clickListener: (Pc) -> Unit
+): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 
     private var pcList = emptyList<Pc>()
     private var ordersList = emptyList<Orders>()
@@ -28,7 +30,8 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
-    class PcViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class PcViewHolder(itemView: View,
+    private val clickListener: (Pc) -> Unit): RecyclerView.ViewHolder(itemView){
         private val tvTitle: TextView = itemView.findViewById(R.id.tvPcTitle)
         private val tvClientName: TextView = itemView.findViewById(R.id.tvPcClientName)
         private val tvClientLastName: TextView = itemView.findViewById(R.id.tvPcClientLastName)
@@ -46,16 +49,35 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
                  clients: List<Clients>,
                  orders: List<Orders>,
                  employees: List<Employees>) {
-            client = clients[orders[computer.orderId - 1].clientId -1]
-            employee = employees[computer.employeeId - 1]
+
+            itemView.setOnClickListener { clickListener(computer) }
+
+            var tempClient: Clients? = null
+//            client = clients[orders[computer.orderId - 1].clientId -1]
+            orders.forEach { order ->
+                if( order.orderId == computer.orderId) {
+                    clients.forEach { client ->
+                        if (client.clientId == order.clientId) {
+                            tempClient = client
+                        }
+                    }
+                }
+            }
+            var employee: Employees? = null
+            employees.forEach {
+                if (it.employeeId == computer.employeeId) {
+                    employee = it
+                }
+            }
+//            employee = employees[computer.employeeId - 1]
             tvTitle.text = computer.title
-            tvClientName.text = client.firstName
-            tvClientLastName.text = client.lastName
+            tvClientName.text = tempClient?.firstName
+            tvClientLastName.text = tempClient?.lastName
             tvOrderId.text = computer.orderId.toString()
             tvOrderType.text = computer.assembly.type
-            tvEmployeeName.text = employee.firstName
-            tvEmployeeLastName.text = employee.lastName
-            tvEmployeeMiddleName.text = employee.middleName
+            tvEmployeeName.text = employee?.firstName
+            tvEmployeeLastName.text = employee?.lastName
+            tvEmployeeMiddleName.text = employee?.middleName
 
 //            val childLayoutManager = LinearLayoutManager(rvAccessories.context, LinearLayoutManager.VERTICAL, false)
 
@@ -66,7 +88,7 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PcViewHolder {
         return PcViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_pc, parent, false))
+            .inflate(R.layout.item_pc, parent, false), clickListener)
     }
 
     override fun onBindViewHolder(holder: PcViewHolder, position: Int) {

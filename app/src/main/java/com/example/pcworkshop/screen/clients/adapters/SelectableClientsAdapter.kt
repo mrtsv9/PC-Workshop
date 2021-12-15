@@ -22,11 +22,16 @@ class SelectableClientsAdapter(): RecyclerView.Adapter<SelectableClientsAdapter.
         private val tvEmail: TextView = itemView.findViewById(R.id.tvClientEmail)
         private val tvPhoneNumber: TextView = itemView.findViewById(R.id.tvClientNumber)
         private val ivCheckmark: ImageView = itemView.findViewById(R.id.ivCheckClients)
-
+//        private val alreadySelectedClientId: Int? = null
 //        var checkedClientId: Int = 0
-        var checker = OrdersAddingFragment.checker
+//        var checker = OrdersAddingFragment.checker
 
         fun bind(item: Clients) {
+
+            if (selectedClientId == item.clientId) {
+                ivCheckmark.visibility = View.VISIBLE
+                itemView.isSelected = true
+            }
 
             tvName.text = item.firstName
             tvLastName.text = item.lastName

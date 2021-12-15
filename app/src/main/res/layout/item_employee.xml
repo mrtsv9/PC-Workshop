@@ -4,17 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_employees"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Имя: "
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Имя: "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -24,7 +34,7 @@
         android:text="имечко"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="6dp"
         app:layout_constraintStart_toEndOf="@+id/tvName"
         app:layout_constraintTop_toTopOf="@+id/tvName" />
 
@@ -32,7 +42,7 @@
         android:id="@+id/tvLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:text="Фамилия: "
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -44,7 +54,7 @@
         android:id="@+id/tvEmployeeLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="6dp"
         android:text="фамилия"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -55,7 +65,7 @@
         android:id="@+id/tvMiddleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:text="Отчество: "
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -67,7 +77,7 @@
         android:id="@+id/tvEmployeeMiddleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="6dp"
         android:text="отчество"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -78,42 +88,43 @@
         android:id="@+id/tvEmpAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Адресс: "
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:text="Адрес: "
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tvLastName"
-        app:layout_constraintTop_toBottomOf="@id/tvMiddleName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/tvEmployeeAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="адресс"
+        android:text="адрес"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/tvMiddleName"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEmpAddress"
         app:layout_constraintTop_toTopOf="@+id/tvEmpAddress" />
 
     <TextView
         android:id="@+id/tvEmpContacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Контактные данные:: "
+        android:layout_marginTop="6dp"
+        android:text="Контактные данные: "
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tvLastName"
+        app:layout_constraintStart_toStartOf="@+id/tvEmpAddress"
         app:layout_constraintTop_toBottomOf="@id/tvEmpAddress" />
 
     <TextView
         android:id="@+id/tvEmployeeNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:text="номер"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -124,7 +135,7 @@
         android:id="@+id/tvEmployeeEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:text="почта"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -135,24 +146,26 @@
         android:id="@+id/tvEmpPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Должность: "
+        android:layout_marginTop="6dp"
+        android:text="Занимаемая должность: "
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tvLastName"
+        app:layout_constraintStart_toStartOf="@+id/tvEmployeeEmail"
         app:layout_constraintTop_toBottomOf="@+id/tvEmployeeEmail" />
 
     <TextView
         android:id="@+id/tvEmployeePosition"
         android:layout_width="wrap_content"
+        android:maxWidth="190dp"
+        android:gravity="center"
         android:layout_height="wrap_content"
-        android:text="должность"
+        android:text="должность22222222222"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="@+id/tvEmpPosition"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmpPosition" />
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEmpPosition"
+        app:layout_constraintTop_toTopOf="@+id/tvEmpPosition" />
 
     <View
         android:background="@drawable/divider_corner"

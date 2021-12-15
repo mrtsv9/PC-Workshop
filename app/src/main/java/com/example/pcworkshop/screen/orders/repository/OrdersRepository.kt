@@ -18,9 +18,19 @@ class OrdersRepository {
         val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(OrdersDao::class.java)
         return retrofitInstance.addOrder(order)
     }
-//    suspend fun getClient(clientId: Int): Response<Client> {
-//        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(ClientsDao::class.java)
-//        return retrofitInstance.getClient(clientId)
-//    }
+
+    fun updateOrder(id: Int,
+                    address: String,
+                    clientId: Int,
+                    paymentMethodId: Int,
+                    deliveryMethodId: Int): Call<PostOrder> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(OrdersDao::class.java)
+        return retrofitInstance.updateOrder(id, address, clientId, paymentMethodId, deliveryMethodId)
+    }
+
+    fun deleteOrder(orderId: Int): Call<Unit> {
+        val retrofitInstance = RetrofitInstance.getRetrofitInstance().create(OrdersDao::class.java)
+        return retrofitInstance.deleteOrder(orderId)
+    }
 
 }

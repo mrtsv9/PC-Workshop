@@ -10,12 +10,15 @@ import com.example.pcworkshop.R
 import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.models.orders.Orders
 
-class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
+class OrdersAdapter(
+    private val clickListener: (Orders) -> Unit
+): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
 
     private var ordersList = emptyList<Orders>()
     private var clientsList = emptyList<Clients>()
 
-    class ClientsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ClientsViewHolder(itemView: View,
+    private val clickListener: (Orders) -> Unit): RecyclerView.ViewHolder(itemView){
         private val tvOrderId: TextView = itemView.findViewById(R.id.tvOrderId)
         private val tvAddress: TextView = itemView.findViewById(R.id.tvOrderAddress)
         private val tvClientName: TextView = itemView.findViewById(R.id.tvOrderClientName)
@@ -26,15 +29,21 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
         private val tvPayment: TextView = itemView.findViewById(R.id.tvOrderPayment)
 
         fun bind(order: Orders, clients: List<Clients>) {
-//            ClientsFragment().getClient(order.clientId)
-//            val client = ClientsViewModel().clientLiveData
-            val client = clients[order.clientId - 1]
+
+            itemView.setOnClickListener { clickListener(order) }
+
+            var client: Clients? = null
+            clients.forEach {
+                if (it.clientId == order.clientId) {
+                    client = it
+                }
+            }
             tvOrderId.text = order.orderId.toString()
             tvAddress.text = order.address
-            tvClientName.text = client.firstName
-            tvClientLastName.text = client.lastName
-            tvClientEmail.text = client.email
-            tvClientNumber.text = client.phoneNumber
+            tvClientName.text = client?.firstName
+            tvClientLastName.text = client?.lastName
+            tvClientEmail.text = client?.email
+            tvClientNumber.text = client?.phoneNumber
             tvDelivery.text= order.delivery.deliveryType
             tvPayment.text= order.payment.paymentType
         }
@@ -43,7 +52,7 @@ class OrdersAdapter(): RecyclerView.Adapter<OrdersAdapter.ClientsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientsViewHolder {
         return ClientsViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_order, parent, false))
+            .inflate(R.layout.item_order, parent, false), clickListener)
     }
 
     override fun onBindViewHolder(holder: ClientsViewHolder, position: Int) {
