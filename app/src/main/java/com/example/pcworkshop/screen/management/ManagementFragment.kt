@@ -51,6 +51,10 @@ class ManagementFragment: Fragment() {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToTypesOfAccessoriesFragment())
         }
 
+        binding?.btnPc?.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToPcAddingFragment())
+        }
+
     }
 
     override fun onDestroy() {

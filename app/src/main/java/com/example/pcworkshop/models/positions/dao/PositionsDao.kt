@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.positions.dao
 
 import com.example.pcworkshop.models.positions.Position
 import com.example.pcworkshop.models.positions.PostPosition

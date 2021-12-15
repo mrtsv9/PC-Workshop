@@ -5,49 +5,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tvPcClientName"
+        android:id="@+id/tvPcAddingEmployeeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Имя: "
+        android:text="Сащеко "
         android:textSize="16sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:layout_marginStart="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvPcClientLastName"
+        android:id="@+id/tvPcAddingEmployeeLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Фамилия: "
+        android:text="Максим"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginStart="12dp"
-        app:layout_constraintStart_toEndOf="@+id/tvPcClientName"
-        app:layout_constraintTop_toTopOf="@+id/tvPcClientName" />
+        app:layout_constraintStart_toEndOf="@+id/tvPcAddingEmployeeName"
+        app:layout_constraintTop_toTopOf="@+id/tvPcAddingEmployeeName" />
 
     <TextView
-        android:id="@+id/tvPcClientMiddleName"
+        android:id="@+id/tvPcAddingEmployeeEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Отчество: "
+        android:text="saschekam@gmail.com"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toEndOf="@+id/tvPcClientLastName"
-        app:layout_constraintTop_toTopOf="@+id/tvPcClientLastName" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/tvPcAddingEmployeeName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcAddingEmployeeName" />
+
+<!--    android:background="#0EE800"-->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_checkmark"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:background="@drawable/divider_corner"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPcClientMiddleName" />
+        app:layout_constraintTop_toBottomOf="@id/tvPcAddingEmployeeEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

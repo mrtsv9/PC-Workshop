@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.accessories.dao
 
 import com.example.pcworkshop.models.accessories.Accessories
 import com.example.pcworkshop.models.accessories.PostAccessory

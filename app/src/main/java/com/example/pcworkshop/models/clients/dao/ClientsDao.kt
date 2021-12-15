@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.clients.dao
 
 import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.models.clients.PostClient

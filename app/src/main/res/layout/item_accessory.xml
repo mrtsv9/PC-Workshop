@@ -110,6 +110,17 @@
         app:layout_constraintStart_toEndOf="@+id/tvProperties"
         app:layout_constraintTop_toTopOf="@+id/tvProperties" />
 
+    <ImageView
+        android:id="@+id/ivAccessoryCheckmark"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_checkmark"
+        android:layout_marginEnd="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:background="@drawable/divider_corner"
         android:layout_width="match_parent"

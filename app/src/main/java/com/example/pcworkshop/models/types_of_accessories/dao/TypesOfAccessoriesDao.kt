@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.types_of_accessories.dao
 
 import com.example.pcworkshop.models.accessories.TypeOfAccessories
 import com.example.pcworkshop.models.types_of_accessories.PostType

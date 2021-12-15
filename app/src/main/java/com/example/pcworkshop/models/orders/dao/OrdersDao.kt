@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.orders.dao
 
 import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.models.orders.PostOrder

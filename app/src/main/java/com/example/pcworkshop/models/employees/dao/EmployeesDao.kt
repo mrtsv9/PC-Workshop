@@ -1,4 +1,4 @@
-package com.example.pcworkshop.dao
+package com.example.pcworkshop.models.employees.dao
 
 import com.example.pcworkshop.models.employees.Employees
 import com.example.pcworkshop.models.employees.PostEmployee

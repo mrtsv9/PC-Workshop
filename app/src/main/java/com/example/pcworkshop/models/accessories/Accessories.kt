@@ -1,5 +1,7 @@
 package com.example.pcworkshop.models.accessories
 
+import com.google.gson.annotations.SerializedName
+
 data class Accessories(
     var accessoriesId: Int = 0,
     var name: String = "",

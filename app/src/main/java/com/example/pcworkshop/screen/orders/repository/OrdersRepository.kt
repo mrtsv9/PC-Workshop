@@ -1,6 +1,6 @@
 package com.example.pcworkshop.screen.orders.repository
 
-import com.example.pcworkshop.dao.OrdersDao
+import com.example.pcworkshop.models.orders.dao.OrdersDao
 import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.models.orders.PostOrder
 import com.example.pcworkshop.services.RetrofitInstance

@@ -1,6 +1,6 @@
 package com.example.pcworkshop.screen.clients.repository
 
-import com.example.pcworkshop.dao.ClientsDao
+import com.example.pcworkshop.models.clients.dao.ClientsDao
 import com.example.pcworkshop.models.clients.Clients
 import com.example.pcworkshop.models.clients.PostClient
 import com.example.pcworkshop.services.RetrofitInstance

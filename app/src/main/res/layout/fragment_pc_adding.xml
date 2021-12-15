@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -52,7 +53,7 @@
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:errorEnabled="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addingPcTitleLayout">
@@ -65,33 +66,54 @@
             android:background="@drawable/border"
             android:hint="Введите номер заказа"
             android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addingAssemblyTypeLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Тип заказа"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addingPcOrderLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/actvAssemblyType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:inputType="none"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <View
-        android:background="@drawable/divider_corner"
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/divider_corner"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addingPcOrderLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/addingAssemblyTypeLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPcEmployees"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addingPcOrderLayout"
-        tools:listitem="@layout/item_employee_for_pc"/>
+        app:layout_constraintTop_toBottomOf="@+id/addingAssemblyTypeLayout"
+        tools:listitem="@layout/item_employee_for_pc" />
 
     <View
         android:background="@drawable/divider_corner"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rvPcEmployees" />
@@ -99,12 +121,26 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPcAccessories"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="270dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvPcEmployees"
-        tools:listitem="@layout/item_accessory"/>
+        tools:listitem="@layout/item_accessory" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddPc"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_button"
+        android:fontFamily="@font/poppins_light"
+        android:text="Добавить компьютер"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvPcAccessories" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

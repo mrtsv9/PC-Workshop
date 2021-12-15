@@ -1,7 +1,7 @@
 package com.example.pcworkshop.z_depcrecated//package com.example.pcworkshop.services
 //
 //import android.util.Log
-//import com.example.pcworkshop.dao.ClientsDao
+//import com.example.pcworkshop.models.clients.dao.ClientsDao
 //import com.example.pcworkshop.models.clients.Client
 //import com.google.gson.Gson
 //import com.google.gson.GsonBuilder
