@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -71,6 +74,9 @@
         <action
             android:id="@+id/action_mainFragment_to_pcAddingFragment"
             app:destination="@id/pcAddingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
     <fragment
         android:id="@+id/clientsAddingFragment"
@@ -142,4 +148,18 @@
         android:name="com.example.pcworkshop.screen.pc.PcAddingFragment"
         android:label="fragment_pc_adding"
         tools:layout="@layout/fragment_pc_adding" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.pcworkshop.screen.user.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_userAddingFragment"
+            app:destination="@id/userAddingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAddingFragment"
+        android:name="com.example.pcworkshop.screen.user.UserAddingFragment"
+        android:label="fragment_user_adding"
+        tools:layout="@layout/fragment_user_adding" />
 </navigation>

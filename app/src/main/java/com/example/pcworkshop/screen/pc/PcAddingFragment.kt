@@ -28,17 +28,10 @@ import com.example.pcworkshop.screen.main.MainFragmentDirections
 import com.example.pcworkshop.screen.pc.repository.PcRepository
 import com.example.pcworkshop.screen.pc.view_models.PcViewModel
 import com.example.pcworkshop.screen.pc_accessories.repository.PcAccessoriesRepository
-import com.example.pcworkshop.screen.pc_accessories.view_models.PcAccessoriesViewModel
 import com.example.pcworkshop.screen.types_of_accessories.view_models.TypesOfAccessoriesViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import org.koin.android.ext.android.bind
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.concurrent.thread
 
 class PcAddingFragment : Fragment() {
 
