@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pcworkshop.R
 import com.example.pcworkshop.databinding.FragmentPcAddingBinding
@@ -23,14 +24,21 @@ import com.example.pcworkshop.screen.accessories.view_models.AccessoriesViewMode
 import com.example.pcworkshop.screen.clients.adapters.SelectableClientsAdapter
 import com.example.pcworkshop.screen.employees.adapters.PcEmployeesAdapter
 import com.example.pcworkshop.screen.employees.view_models.EmployeesViewModel
+import com.example.pcworkshop.screen.main.MainFragmentDirections
 import com.example.pcworkshop.screen.pc.repository.PcRepository
 import com.example.pcworkshop.screen.pc.view_models.PcViewModel
 import com.example.pcworkshop.screen.pc_accessories.repository.PcAccessoriesRepository
+import com.example.pcworkshop.screen.pc_accessories.view_models.PcAccessoriesViewModel
 import com.example.pcworkshop.screen.types_of_accessories.view_models.TypesOfAccessoriesViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.bind
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.concurrent.thread
 
 class PcAddingFragment : Fragment() {
 
@@ -53,43 +61,47 @@ class PcAddingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fillTypes()
+            fillTypes()
 
-        binding?.btnAddPc?.setOnClickListener {
-            clickListener()
-        }
+            val employeesAdapter = PcEmployeesAdapter()
+            binding?.rvPcEmployees?.layoutManager = LinearLayoutManager(
+                binding?.root?.context,
+                LinearLayoutManager.VERTICAL, false
+            )
+            binding?.rvPcEmployees?.adapter = employeesAdapter
 
-        val employeesAdapter  = PcEmployeesAdapter()
-        binding?.rvPcEmployees?.layoutManager = LinearLayoutManager(binding?.root?.context,
-            LinearLayoutManager.VERTICAL, false)
-        binding?.rvPcEmployees?.adapter = employeesAdapter
+            employeesViewModel.getAllEmployees()
+            employeesViewModel.employeesLiveData.observe(viewLifecycleOwner) {
+                employeesAdapter.setData(it)
+            }
 
-        employeesViewModel.getAllEmployees()
-        employeesViewModel.employeesLiveData.observe(viewLifecycleOwner) {
-            employeesAdapter.setData(it)
-        }
+            typesViewModel.getAllTypesOfAccessories()
+            typesViewModel.typesOfAccessoriesLiveData.observe(viewLifecycleOwner) {
+                types = it.toMutableList()
+            }
 
-        typesViewModel.getAllTypesOfAccessories()
-        typesViewModel.typesOfAccessoriesLiveData.observe(viewLifecycleOwner) {
-            types = it.toMutableList()
-        }
+            val accessoriesAdapter = PcAccessoriesAdapter()
+            binding?.rvPcAccessories?.layoutManager = LinearLayoutManager(
+                binding?.root?.context,
+                LinearLayoutManager.VERTICAL, false
+            )
+            binding?.rvPcAccessories?.adapter = accessoriesAdapter
 
-        val accessoriesAdapter  = PcAccessoriesAdapter()
-        binding?.rvPcAccessories?.layoutManager = LinearLayoutManager(binding?.root?.context,
-            LinearLayoutManager.VERTICAL, false)
-        binding?.rvPcAccessories?.adapter = accessoriesAdapter
+            accessoriesViewModel.getAllAccessories()
+            accessoriesViewModel.accessoriesLiveData.observe(viewLifecycleOwner) {
+                accessoriesAdapter.setData(it)
+            }
 
-        accessoriesViewModel.getAllAccessories()
-        accessoriesViewModel.accessoriesLiveData.observe(viewLifecycleOwner) {
-            accessoriesAdapter.setData(it)
-        }
+            binding?.btnAddPc?.setOnClickListener {
+                clickListener()
+            }
 
-        tempTitle = ""
-        tempAccessoriesList.clear()
-        myAccessory = null
-        types.clear()
-        tempEmployeeEmail = ""
-        employeeChecker = false
+//            tempTitle = ""
+//            tempAccessoriesList.clear()
+//            myAccessory = null
+//            types.clear()
+//            tempEmployeeEmail = ""
+//            employeeChecker = false
     }
 
     private fun clickListener() {
@@ -121,59 +133,42 @@ class PcAddingFragment : Fragment() {
             call.enqueue(object: Callback<PostPc> {
                 override fun onResponse(call: Call<PostPc>, response: Response<PostPc>) {
                     Toast.makeText(context, "Комьютер был успешно добавлен", Toast.LENGTH_SHORT).show()
+                    viewModel.getAllPc()
                     addPcAccessories(tempTitle)
+/*                    viewModel.getAllPc()
+                    val pcList: MutableList<Pc> = emptyList<Pc>().toMutableList()
+                    viewModel.pcLiveData.observe(viewLifecycleOwner) {
+                        pcList.addAll(it)
+                    }
+                    addPcAccessories(tempTitle, pcList)*/
+                    findNavController().popBackStack()
                 }
 
                 override fun onFailure(call: Call<PostPc>, t: Throwable) {
                     Toast.makeText(context, "Комьютер был успешно добавлен", Toast.LENGTH_SHORT).show()
+                        viewModel.getAllPc()
+
+                    Thread.sleep(400)
                     addPcAccessories(tempTitle)
+/*                    viewModel.getAllPc()
+                    val pcList: MutableList<Pc> = emptyList<Pc>().toMutableList()
+                    viewModel.pcLiveData.observe(viewLifecycleOwner) {
+                        pcList.addAll(it)
+                    }
+                    addPcAccessories(tempTitle, pcList)*/
+                    findNavController().popBackStack()
                 }
             })
-//            addPcAccessories(title)
-//            var pcId = 0
-//            var pcList: MutableList<Pc> = emptyList<Pc>().toMutableList()
-//            viewModel.getAllPc()
-//            viewModel.pcLiveData.observe(viewLifecycleOwner) {
-//                it.forEach {
-//                    if (it.title == title) {
-//                        pcId = it.pcId
-//                    }
-//                }
-//                pcList.addAll(it)
-//                pcList.forEach {
-//                    if (it.title == title) {
-//                        pcId = it.pcId
-//                    }
-//                }
-//                tempAccessoriesList.forEach { accessories ->
-//                    val callPcAccessories = pcAccessoriesRepository
-//                        .addPcAccessories(PostPcAccessories(pcId, accessories.accessoriesId))
-//                    callPcAccessories.enqueue(object: Callback<PostPcAccessories> {
-//                        override fun onResponse(
-//                            call: Call<PostPcAccessories>,
-//                            response: Response<PostPcAccessories>
-//                        ) {
-//
-//                        }
-//
-//                        override fun onFailure(call: Call<PostPcAccessories>, t: Throwable) {
-//
-//                        }
-//                    })
-//                }
-//            }
 
         }
     }
 
-    private fun addPcAccessories(title: String) {
-
+/*    private fun addPcAccessories(title: String, pcList: List<Pc>) {
         var pcId = 0
-        viewModel.getAllPc()
-        viewModel.pcLiveData.observe(viewLifecycleOwner) {
-            it.forEach {
-                if (it.title == title) {
-                    pcId = it.pcId
+            pcList.forEach { pc ->
+                if (pc.title == title) {
+                    pcId = pc.pcId
+                }
                     tempAccessoriesList.forEach { accessory ->
                         val call = pcAccessoriesRepository.addPcAccessories(PostPcAccessories(pcId, accessory.accessoriesId))
 
@@ -191,9 +186,40 @@ class PcAddingFragment : Fragment() {
                         })
                     }
                 }
+            }*/
+
+
+    private fun addPcAccessories(title: String) {
+        var pcId = 0
+        viewModel.pcLiveData.observe(viewLifecycleOwner) {
+            it.forEach { pc ->
+                if (pc.title == title) {
+                    pcId = pc.pcId
+                    tempAccessoriesList.forEach { accessory ->
+                        val call = pcAccessoriesRepository.addPcAccessories(PostPcAccessories(pcId, accessory.accessoriesId))
+
+                        call.enqueue(object: Callback<PostPcAccessories> {
+                            override fun onResponse(
+                                call: Call<PostPcAccessories>,
+                                response: Response<PostPcAccessories>
+                            ) {
+                                Log.e("KEK", response.body().toString())
+                            }
+
+                            override fun onFailure(call: Call<PostPcAccessories>, t: Throwable) {
+                                Log.e("KEK", t.toString())
+                            }
+                        })
+                    }
+                }
             }
         }
-
+//        tempTitle = ""
+//        tempAccessoriesList.clear()
+//        myAccessory = null
+//        types.clear()
+//        tempEmployeeEmail = ""
+//        employeeChecker = false
     }
 
     private fun fillTypes() {
@@ -202,9 +228,48 @@ class PcAddingFragment : Fragment() {
         binding?.actvAssemblyType?.setAdapter(arrayAdapter)
     }
 
+   /* private fun setFields() {
+        binding?.etAddingPcTitle?.setText(pcToUpdate?.title)
+        binding?.etAddingPcOrder?.setText(pcToUpdate?.orderId.toString())
+        val type = if (pcToUpdate?.assemblyTypeId == 1) {
+            "Готовая сборка"
+        } else "Выбор комплектующих"
+        binding?.actvAssemblyType?.setText(type)
+        fillTypes()
+        employeesViewModel.employeesLiveData.observe(viewLifecycleOwner) {
+            it.forEach { employee ->
+                if (employee.employeeId == pcToUpdate?.employeeId) {
+                    tempEmployeeEmail = employee.email
+                    employeeChecker = true
+                }
+            }
+        }
+        pcAccessoriesViewModel.getAllPcAccessories()
+        pcAccessoriesViewModel.accessoriesLiveData.observe(viewLifecycleOwner) {
+            it.forEach { pcAccessories ->
+                if (pcAccessories.pcId == pcToUpdate?.pcId) {
+                    accessoriesViewModel.accessoriesLiveData.observe(viewLifecycleOwner) { accessories ->
+                        accessories.forEach { accessory ->
+                            if (accessory.accessoriesId == pcAccessories.accessoryId) {
+                                tempAccessoriesList.add(accessory)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }*/
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+        tempTitle = ""
+        tempAccessoriesList.clear()
+        myAccessory = null
+        types.clear()
+        tempEmployeeEmail = ""
+        employeeChecker = false
     }
 
     companion object {
@@ -214,6 +279,7 @@ class PcAddingFragment : Fragment() {
         var types: MutableList<TypesOfAccessories> = emptyList<TypesOfAccessories>().toMutableList()
         var tempEmployeeEmail = ""
         var employeeChecker = false
+
     }
 
 }

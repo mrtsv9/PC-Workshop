@@ -16,9 +16,7 @@ import com.example.pcworkshop.models.pc.Pc
 import com.example.pcworkshop.models.pc_accessories.PcAccessories
 import com.example.pcworkshop.screen.accessories.adapters.AccessoriesAdapter
 
-class PcAdapter(
-    private val clickListener: (Pc) -> Unit
-): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
+class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 
     private var pcList = emptyList<Pc>()
     private var ordersList = emptyList<Orders>()
@@ -30,8 +28,7 @@ class PcAdapter(
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
-    class PcViewHolder(itemView: View,
-    private val clickListener: (Pc) -> Unit): RecyclerView.ViewHolder(itemView){
+    class PcViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val tvTitle: TextView = itemView.findViewById(R.id.tvPcTitle)
         private val tvClientName: TextView = itemView.findViewById(R.id.tvPcClientName)
         private val tvClientLastName: TextView = itemView.findViewById(R.id.tvPcClientLastName)
@@ -49,8 +46,6 @@ class PcAdapter(
                  clients: List<Clients>,
                  orders: List<Orders>,
                  employees: List<Employees>) {
-
-            itemView.setOnClickListener { clickListener(computer) }
 
             var tempClient: Clients? = null
 //            client = clients[orders[computer.orderId - 1].clientId -1]
@@ -88,7 +83,7 @@ class PcAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PcViewHolder {
         return PcViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_pc, parent, false), clickListener)
+            .inflate(R.layout.item_pc, parent, false))
     }
 
     override fun onBindViewHolder(holder: PcViewHolder, position: Int) {

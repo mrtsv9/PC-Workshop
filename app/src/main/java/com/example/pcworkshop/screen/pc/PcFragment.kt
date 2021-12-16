@@ -38,7 +38,7 @@ class PcFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = PcAdapter() { onUpdateClickListener() }
+        val adapter = PcAdapter()
         binding?.rvPc?.layoutManager = LinearLayoutManager(
             binding?.root?.context,
             LinearLayoutManager.VERTICAL, false
@@ -67,9 +67,6 @@ class PcFragment : Fragment() {
         }
     }
 
-    private fun onUpdateClickListener() {
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
