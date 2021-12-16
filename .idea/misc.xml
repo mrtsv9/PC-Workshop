@@ -28,6 +28,7 @@
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_accessories.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_clients.xml" value="0.19375" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_clients_adding.xml" value="0.33" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_employees.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_employees_adding.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_main.xml" value="1.0" />
@@ -39,6 +40,7 @@
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_positions.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_types_of_accessories.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/fragment_user.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_accessory.xml" value="0.33" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_client.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/PCWorkshop/app/src/main/res/layout/item_employee.xml" value="0.36666666666666664" />

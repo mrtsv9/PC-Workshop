@@ -71,11 +71,11 @@
             android:layout_marginStart="8dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etName"
+            android:id="@+id/etLoginEmail"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
-            android:hint="Введите логин"
+            android:hint="Введите email"
             android:inputType="text"
             android:paddingStart="38dp"
             android:background="@drawable/border">
@@ -113,7 +113,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAddingClientsEmail"
+            android:id="@+id/etLoginPassword"
             android:layout_width="340dp"
             android:layout_height="55dp"
             android:layout_gravity="center"

@@ -58,7 +58,7 @@ class MainFragment: Fragment(), BottomNavigationView.OnNavigationItemSelectedLis
         return true
     }
 
-    fun setCurrentFragment(fragment: Fragment) {
+    private fun setCurrentFragment(fragment: Fragment) {
         childFragmentManager.beginTransaction().apply {
             replace(R.id.mainContainer,fragment)
             commit()

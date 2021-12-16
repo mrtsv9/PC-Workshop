@@ -11,6 +11,7 @@ data class Employees(
     var address: String = "",
     var phoneNumber: String = "",
     var email: String = "",
+    var password: String = "",
     var positionId: Int = 0,
     val position: Position
 )

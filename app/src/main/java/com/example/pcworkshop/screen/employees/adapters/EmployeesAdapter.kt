@@ -1,6 +1,7 @@
 package com.example.pcworkshop.screen.employees.adapters
 
 import android.annotation.SuppressLint
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,9 @@ class EmployeesAdapter(): RecyclerView.Adapter<EmployeesAdapter.EmployeesViewHol
         private val tvAddress: TextView = itemView.findViewById(R.id.tvEmployeeAddress)
         private val tvNumber: TextView = itemView.findViewById(R.id.tvEmployeeNumber)
         private val tvEmail: TextView = itemView.findViewById(R.id.tvEmployeeEmail)
+        private val tvPassword: TextView = itemView.findViewById(R.id.tvEmployeePassword)
         private val tvPosition: TextView = itemView.findViewById(R.id.tvEmployeePosition)
+
 
         fun bind(employee: Employees) {
             tvName.text = employee.firstName
@@ -29,6 +32,7 @@ class EmployeesAdapter(): RecyclerView.Adapter<EmployeesAdapter.EmployeesViewHol
             tvAddress.text = employee.address
             tvNumber.text = employee.phoneNumber
             tvEmail.text = employee.email
+            tvPassword.text = employee.password
             tvPosition.text = employee.position.name
         }
 

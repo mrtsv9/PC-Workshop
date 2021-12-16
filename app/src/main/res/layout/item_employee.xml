@@ -143,6 +143,29 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEmployeeNumber" />
 
     <TextView
+        android:id="@+id/tvEmpPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="пароль"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvEmployeeEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmployeeEmail" />
+
+    <TextView
+        android:id="@+id/tvEmployeePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="qwerty"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEmpPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmployeeEmail" />
+
+    <TextView
         android:id="@+id/tvEmpPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,7 +175,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvEmployeeEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmployeeEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmpPassword" />
 
     <TextView
         android:id="@+id/tvEmployeePosition"
