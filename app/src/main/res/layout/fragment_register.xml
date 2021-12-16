@@ -236,7 +236,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_button"
-        android:text="@string/sign_in"
+        android:text="Зарегистироваться"
         android:textSize="20sp"
         android:fontFamily="@font/poppins_light"
         app:layout_constraintEnd_toEndOf="@+id/addingClientsPasswordLayout"
@@ -244,6 +244,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addingClientsPasswordLayout" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/tvHave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -256,6 +257,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSingIn" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
