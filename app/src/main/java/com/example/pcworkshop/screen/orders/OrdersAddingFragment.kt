@@ -251,6 +251,7 @@ class OrdersAddingFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        clearAll()
         binding = null
     }
 

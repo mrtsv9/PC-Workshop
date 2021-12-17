@@ -150,17 +150,42 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEmployee" />
 
     <TextView
+        android:id="@+id/tvPcPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Стоимость: "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvPcEmployeeLastName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcEmployeeLastName" />
+
+    <TextView
+        android:id="@+id/tvPcTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="200 грывень "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPcPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvPcEmployeeLastName" />
+
+    <TextView
         android:id="@+id/tvListOfAccessories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="Список входящих комплектующих"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPcEmployeeName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPcPrice" />
 
     <View
         android:background="@drawable/divider_corner"

@@ -15,6 +15,7 @@ import com.example.pcworkshop.models.orders.Orders
 import com.example.pcworkshop.models.pc.Pc
 import com.example.pcworkshop.models.pc_accessories.PcAccessories
 import com.example.pcworkshop.screen.accessories.adapters.AccessoriesAdapter
+import org.w3c.dom.Text
 
 class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
 
@@ -37,6 +38,7 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
         private val tvEmployeeLastName: TextView = itemView.findViewById(R.id.tvPcEmployeeLastName)
         private val tvEmployeeName: TextView = itemView.findViewById(R.id.tvPcEmployeeName)
         private val tvEmployeeMiddleName: TextView = itemView.findViewById(R.id.tvPcEmployeeMiddleName)
+        private val tvTotalPrice: TextView = itemView.findViewById(R.id.tvPcTotalPrice)
         val rvAccessories: RecyclerView = itemView.findViewById(R.id.rvAccessories)
 
         lateinit var client: Clients
@@ -66,6 +68,7 @@ class PcAdapter(): RecyclerView.Adapter<PcAdapter.PcViewHolder>() {
             }
 //            employee = employees[computer.employeeId - 1]
             tvTitle.text = computer.title
+            tvTotalPrice.text = computer.totalPrice.toString()
             tvClientName.text = tempClient?.firstName
             tvClientLastName.text = tempClient?.lastName
             tvOrderId.text = computer.orderId.toString()

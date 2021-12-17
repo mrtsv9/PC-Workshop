@@ -166,6 +166,7 @@ class ClientsAddingFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+        clearAll()
     }
 
     companion object {

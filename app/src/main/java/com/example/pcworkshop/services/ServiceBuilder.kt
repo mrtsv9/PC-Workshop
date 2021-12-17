@@ -16,12 +16,10 @@ object ServiceBuilder {
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(URL)
-//        .addConverterFactory(MoshiConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
     fun <T> buildService(serviceType: Class<T>): T {
         return retrofit.create(serviceType)
     }
-
 }

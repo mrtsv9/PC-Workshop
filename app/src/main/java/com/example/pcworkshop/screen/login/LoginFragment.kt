@@ -40,6 +40,11 @@ class LoginFragment: Fragment() {
         btn.setOnClickListener {
             findUser()
         }
+
+        binding?.tvRegister?.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
+        }
+
     }
 
     private fun findUser() {

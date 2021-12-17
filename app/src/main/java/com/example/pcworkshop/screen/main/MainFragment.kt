@@ -13,6 +13,7 @@ import com.example.pcworkshop.screen.employees.EmployeesFragment
 import com.example.pcworkshop.screen.management.ManagementFragment
 import com.example.pcworkshop.screen.orders.OrdersFragment
 import com.example.pcworkshop.screen.pc.PcFragment
+import com.example.pcworkshop.screen.user.UserFragment.Companion.loggedUserEmail
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment: Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +34,7 @@ class MainFragment: Fragment(), BottomNavigationView.OnNavigationItemSelectedLis
 
         setCurrentFragment(ManagementFragment())
         binding?.bottomNavView?.setOnNavigationItemSelectedListener(this)
+        loggedUserEmail = null
     }
 
     override fun onDestroyView() {
